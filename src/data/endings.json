@@ -1,0 +1,149 @@
+{
+  "defaultEndingId": "ending_normal",
+  "list": [
+    {
+      "id": "ending_normal",
+      "title": "稳健安全人",
+      "summary": "你以稳健姿态完成职业旅程，留下可复用的安全经验。",
+      "grade": 3,
+      "priority": 10,
+      "condition": "health>0"
+    },
+    {
+      "id": "ending_blue_ops",
+      "title": "安全运营专家",
+      "summary": "你在安全运营体系中建立了稳固的节奏与流程。",
+      "grade": 4,
+      "priority": 60,
+      "condition": "TAG?[blue] & reputation>=55"
+    },
+    {
+      "id": "ending_red_ace",
+      "title": "红队王牌",
+      "summary": "你在高对抗任务中建立起传奇战绩。",
+      "grade": 4,
+      "priority": 60,
+      "condition": "TAG?[red] & tech>=65 & risk>=40"
+    },
+    {
+      "id": "ending_grc_guardian",
+      "title": "合规守护者",
+      "summary": "你构建了稳定的治理体系，保障业务合规。",
+      "grade": 4,
+      "priority": 60,
+      "condition": "TAG?[grc] & ethics>=60"
+    },
+    {
+      "id": "ending_research_master",
+      "title": "研究专家",
+      "summary": "你以研究成果塑造行业方向。",
+      "grade": 4,
+      "priority": 70,
+      "condition": "TAG?[research] & tech>=70"
+    },
+    {
+      "id": "ending_ciso",
+      "title": "安全负责人",
+      "summary": "你建立起全面的安全体系，成为组织核心。",
+      "grade": 5,
+      "priority": 90,
+      "condition": "TAG?[lead] & reputation>=75 & social>=60"
+    },
+    {
+      "id": "ending_strategy",
+      "title": "安全战略家",
+      "summary": "你以战略视角引领安全方向。",
+      "grade": 5,
+      "priority": 80,
+      "condition": "social>=70 & reputation>=60"
+    },
+    {
+      "id": "ending_burnout",
+      "title": "职业燃尽",
+      "summary": "高压让你身心透支，必须暂停脚步。",
+      "grade": 2,
+      "priority": 80,
+      "condition": "health<=10"
+    },
+    {
+      "id": "ending_risk_overload",
+      "title": "风险失控",
+      "summary": "长期高风险决策让你付出代价。",
+      "grade": 2,
+      "priority": 70,
+      "condition": "risk>=85"
+    },
+    {
+      "id": "ending_community_mentor",
+      "title": "社区导师",
+      "summary": "你在社区沉淀了丰富经验，成为后辈导师。",
+      "grade": 3,
+      "priority": 50,
+      "condition": "FLAG?[FLAG_COMMUNITY] & reputation>=50"
+    },
+    {
+      "id": "ending_privacy_guard",
+      "title": "隐私守护者",
+      "summary": "你推动隐私与合规治理，建立信任。",
+      "grade": 3,
+      "priority": 55,
+      "condition": "FLAG?[FLAG_PRIVACY] & ethics>=55"
+    },
+    {
+      "id": "ending_research_hero",
+      "title": "漏洞英雄",
+      "summary": "你的发现推动了安全行业的进步。",
+      "grade": 4,
+      "priority": 65,
+      "condition": "FLAG?[FLAG_VULN_MAJOR]"
+    },
+    {
+      "id": "ending_incident_hero",
+      "title": "应急英雄",
+      "summary": "你在关键事件中挽回损失，声誉大涨。",
+      "grade": 4,
+      "priority": 65,
+      "condition": "FLAG?[FLAG_INCIDENT_RESPONSE] & reputation>=50"
+    },
+    {
+      "id": "ending_happy_life",
+      "title": "快乐人生",
+      "summary": "你始终保持热情与快乐，过上自己想要的生活。",
+      "grade": 4,
+      "priority": 60,
+      "condition": "happiness>=80"
+    },
+    {
+      "id": "ending_grit_survivor",
+      "title": "韧性生存者",
+      "summary": "你在无数打击中咬牙坚持，最终稳住了人生。",
+      "grade": 4,
+      "priority": 58,
+      "condition": "ethics>=80 & health>=35"
+    },
+    {
+      "id": "ending_family_support",
+      "title": "资源护航",
+      "summary": "家境与资源帮助你实现了更稳定的发展。",
+      "grade": 3,
+      "priority": 50,
+      "condition": "money>=70"
+    },
+    {
+      "id": "ending_balance",
+      "title": "平衡人生",
+      "summary": "你在职业与健康之间找到了平衡。",
+      "grade": 3,
+      "priority": 45,
+      "condition": "health>=65 & risk<=25"
+    },
+    {
+      "id": "ending_retire",
+      "title": "安稳退场",
+      "summary": "你将经验传递给新人，优雅退场。",
+      "grade": 3,
+      "priority": 40,
+      "condition": "AGE>=60 & reputation>=40"
+    }
+  ]
+}

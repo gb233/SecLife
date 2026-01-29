@@ -1,0 +1,156 @@
+{
+  "tracks": [
+    {
+      "id": "blue",
+      "name": "蓝队/SOC",
+      "description": "监测、响应、运营",
+      "color": "#38bdf8"
+    },
+    {
+      "id": "red",
+      "name": "红队/渗透",
+      "description": "攻防、渗透、对抗",
+      "color": "#fb7185"
+    },
+    {
+      "id": "grc",
+      "name": "GRC/合规",
+      "description": "治理、合规、风险",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "research",
+      "name": "攻防研究",
+      "description": "漏洞研究、工具开发",
+      "color": "#34d399"
+    },
+    {
+      "id": "lead",
+      "name": "管理/安全负责人",
+      "description": "战略、预算、团队",
+      "color": "#fbbf24"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "blue_1",
+      "trackId": "blue",
+      "tier": 1,
+      "title": "SOC 值班",
+      "requires": { "ageMin": 20, "stats": { "tech": 20 } },
+      "effects": { "stats": { "reputation": 2 }, "tagsAdd": ["blue"] }
+    },
+    {
+      "id": "blue_2",
+      "trackId": "blue",
+      "tier": 2,
+      "title": "威胁狩猎",
+      "requires": { "ageMin": 26, "stats": { "tech": 35, "reputation": 15 } },
+      "effects": { "stats": { "tech": 3, "risk": -1 }, "tagsAdd": ["blue"] }
+    },
+    {
+      "id": "blue_3",
+      "trackId": "blue",
+      "tier": 3,
+      "title": "安全运营负责人",
+      "requires": { "ageMin": 34, "stats": { "social": 30, "reputation": 35 } },
+      "effects": { "stats": { "social": 3, "reputation": 4 }, "tagsAdd": ["blue", "lead"] }
+    },
+    {
+      "id": "red_1",
+      "trackId": "red",
+      "tier": 1,
+      "title": "渗透测试",
+      "requires": { "ageMin": 20, "stats": { "tech": 22 } },
+      "effects": { "stats": { "tech": 3, "risk": 2 }, "tagsAdd": ["red"] }
+    },
+    {
+      "id": "red_2",
+      "trackId": "red",
+      "tier": 2,
+      "title": "红队演练",
+      "requires": { "ageMin": 27, "stats": { "tech": 38, "risk": 25 } },
+      "effects": { "stats": { "tech": 4, "reputation": 2 }, "tagsAdd": ["red"] }
+    },
+    {
+      "id": "red_3",
+      "trackId": "red",
+      "tier": 3,
+      "title": "对抗专家",
+      "requires": { "ageMin": 34, "stats": { "tech": 55, "social": 25 } },
+      "effects": { "stats": { "reputation": 4, "risk": 2 }, "tagsAdd": ["red"] }
+    },
+    {
+      "id": "grc_1",
+      "trackId": "grc",
+      "tier": 1,
+      "title": "合规专员",
+      "requires": { "ageMin": 22, "stats": { "ethics": 18 } },
+      "effects": { "stats": { "social": 2, "reputation": 2 }, "tagsAdd": ["grc"] }
+    },
+    {
+      "id": "grc_2",
+      "trackId": "grc",
+      "tier": 2,
+      "title": "风险经理",
+      "requires": { "ageMin": 30, "stats": { "ethics": 30, "social": 25 } },
+      "effects": { "stats": { "reputation": 3, "risk": -2 }, "tagsAdd": ["grc"] }
+    },
+    {
+      "id": "grc_3",
+      "trackId": "grc",
+      "tier": 3,
+      "title": "治理官",
+      "requires": { "ageMin": 38, "stats": { "social": 35, "reputation": 40 } },
+      "effects": { "stats": { "social": 4, "reputation": 3 }, "tagsAdd": ["grc", "lead"] }
+    },
+    {
+      "id": "research_1",
+      "trackId": "research",
+      "tier": 1,
+      "title": "漏洞研究",
+      "requires": { "ageMin": 21, "stats": { "tech": 24 } },
+      "effects": { "stats": { "tech": 4 }, "tagsAdd": ["research"] }
+    },
+    {
+      "id": "research_2",
+      "trackId": "research",
+      "tier": 2,
+      "title": "利用链开发",
+      "requires": { "ageMin": 28, "stats": { "tech": 40 } },
+      "effects": { "stats": { "tech": 5, "risk": 2 }, "tagsAdd": ["research"] }
+    },
+    {
+      "id": "research_3",
+      "trackId": "research",
+      "tier": 3,
+      "title": "研究负责人",
+      "requires": { "ageMin": 36, "stats": { "tech": 60, "reputation": 30 } },
+      "effects": { "stats": { "reputation": 4 }, "tagsAdd": ["research", "lead"] }
+    },
+    {
+      "id": "lead_1",
+      "trackId": "lead",
+      "tier": 1,
+      "title": "安全主管",
+      "requires": { "ageMin": 28, "stats": { "social": 20, "reputation": 20 } },
+      "effects": { "stats": { "social": 3, "reputation": 3 }, "tagsAdd": ["lead"] }
+    },
+    {
+      "id": "lead_2",
+      "trackId": "lead",
+      "tier": 2,
+      "title": "安全经理",
+      "requires": { "ageMin": 35, "stats": { "social": 35, "reputation": 35 } },
+      "effects": { "stats": { "social": 4, "reputation": 4 }, "tagsAdd": ["lead"] }
+    },
+    {
+      "id": "lead_3",
+      "trackId": "lead",
+      "tier": 3,
+      "title": "CISO",
+      "requires": { "ageMin": 42, "stats": { "social": 50, "reputation": 60 } },
+      "effects": { "stats": { "social": 5, "reputation": 5 }, "tagsAdd": ["lead"] }
+    }
+  ]
+}

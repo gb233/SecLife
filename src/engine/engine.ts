@@ -34,7 +34,18 @@ export class LifeEngine {
   start(options: StartOptions = {}) {
     this.state = this.createInitialState();
     if (options.talents) {
-      this.state.talents = this.resolveTalents(options.talents);
+      const resolution = this.resolveTalents(options.talents);
+      this.state.talents = resolution.talents;
+      resolution.replacements.forEach(({ source, target }) => {
+        const sourceName = this.talentMap.get(source)?.name ?? source;
+        const targetName = this.talentMap.get(target)?.name ?? target;
+        this.state.log.push({
+          age: this.data.config.ageStart,
+          type: "SYSTEM",
+          title: "天赋替换",
+          text: `将「${sourceName}」替换为「${targetName}」。`,
+        });
+      });
     }
     if (options.allocations) {
       this.applyAllocations(options.allocations, options.pointBonus ?? 0);
@@ -158,7 +169,9 @@ export class LifeEngine {
     });
   }
 
-  private resolveTalents(talentIds: string[]): string[] {
+  private resolveTalents(
+    talentIds: string[]
+  ): { talents: string[]; replacements: { source: string; target: string }[] } {
     const unique = Array.from(new Set(talentIds));
     const selected: string[] = [];
 
@@ -169,14 +182,16 @@ export class LifeEngine {
     });
 
     const resolved = [...selected];
+    const replacements: { source: string; target: string }[] = [];
     selected.forEach((id) => {
       const replacementId = this.resolveReplacement(id, resolved);
       if (replacementId !== id && !resolved.includes(replacementId)) {
         resolved.push(replacementId);
+        replacements.push({ source: id, target: replacementId });
       }
     });
 
-    return resolved;
+    return { talents: resolved, replacements };
   }
 
   private resolveReplacement(talentId: string, current: string[], depth = 0): string {

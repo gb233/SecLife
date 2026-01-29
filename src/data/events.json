@@ -924,5 +924,53 @@
     "include": "reputation>=30",
     "effects": { "stats": { "reputation": 3, "social": 2, "ethics": 1 } },
     "tags": ["cross", "executive", "lead"]
+  },
+  {
+    "id": "evt_cross_product_002",
+    "title": "安全体验争论",
+    "text": "你与产品团队在安全体验上产生分歧。",
+    "grade": 3,
+    "effects": { "stats": { "social": -1, "risk": 1 } },
+    "branch": [
+      { "condition": "social>=30 & ethics>=20", "next": "evt_cross_product_001" },
+      { "condition": "social<30", "next": "evt_red_006" }
+    ],
+    "tags": ["cross", "product", "conflict"]
+  },
+  {
+    "id": "evt_cross_legal_002",
+    "title": "监管抽检",
+    "text": "监管抽检突然到来，你要快速补齐合规材料。",
+    "grade": 3,
+    "effects": { "stats": { "ethics": -1, "risk": 1 } },
+    "branch": [
+      { "condition": "ethics>=28", "next": "evt_cross_legal_001" },
+      { "condition": "ethics<28", "next": "evt_life_013" }
+    ],
+    "tags": ["cross", "legal", "audit"]
+  },
+  {
+    "id": "evt_cross_ops_002",
+    "title": "变更窗口事故",
+    "text": "一次变更窗口出现失误，事故压力骤增。",
+    "grade": 4,
+    "effects": { "stats": { "health": -2, "risk": 2 } },
+    "branch": [
+      { "condition": "tech>=40", "next": "evt_blue_010" },
+      { "condition": "tech<40", "next": "evt_blue_011" }
+    ],
+    "tags": ["cross", "ops", "incident"]
+  },
+  {
+    "id": "evt_cross_board_002",
+    "title": "预算拉锯",
+    "text": "安全预算进入拉锯战，你需要拿出硬数据。",
+    "grade": 4,
+    "effects": { "stats": { "social": -1, "reputation": -1, "risk": 1 } },
+    "branch": [
+      { "condition": "reputation>=35", "next": "evt_cross_board_001" },
+      { "condition": "reputation<35", "next": "evt_mgt_006" }
+    ],
+    "tags": ["cross", "executive", "lead"]
   }
 ]

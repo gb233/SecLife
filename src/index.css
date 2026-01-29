@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    --ink: #0b0d12;
+    --slate: #e6e8ef;
+    --haze: #a1a7b8;
+    --dawn: #151822;
+    --glow: rgba(249, 115, 22, 0.2);
+  }
+
+  body {
+    @apply font-body text-slate bg-ink antialiased overflow-hidden;
+    background-image: radial-gradient(circle at top, rgba(30, 41, 59, 0.35), transparent 60%);
+    height: 100vh;
+  }
+
+  #root {
+    height: 100vh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-slate;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply px-4 md:px-8 lg:px-12 max-w-5xl mx-auto w-full;
+  }
+
+  .panel {
+    @apply rounded-2xl border border-slate/15 bg-dawn/90 shadow-card;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-md border border-slate/25 bg-ink/40 px-2.5 py-1 text-[11px] font-medium text-slate/80;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-md bg-cta px-4 py-2 text-xs font-semibold text-ink shadow-soft transition hover:bg-amber-400;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center rounded-md border border-slate/25 bg-transparent px-4 py-2 text-xs font-semibold text-slate/80 transition hover:border-slate/50 hover:text-slate;
+  }
+}

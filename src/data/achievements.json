@@ -1,0 +1,344 @@
+[
+  {
+    "id": "achv_start_tech",
+    "name": "技术底子",
+    "description": "开局技术基础扎实。",
+    "grade": 1,
+    "hide": false,
+    "opportunity": "START",
+    "condition": "tech>=18"
+  },
+  {
+    "id": "achv_start_ethics",
+    "name": "伦理底线",
+    "description": "开局伦理意识较强。",
+    "grade": 1,
+    "hide": false,
+    "opportunity": "START",
+    "condition": "ethics>=18"
+  },
+  {
+    "id": "achv_start_social",
+    "name": "沟通起点",
+    "description": "开局社交能力突出。",
+    "grade": 1,
+    "hide": false,
+    "opportunity": "START",
+    "condition": "social>=18"
+  },
+  {
+    "id": "achv_start_balance",
+    "name": "健康起步",
+    "description": "开局精力充沛。",
+    "grade": 1,
+    "hide": false,
+    "opportunity": "START",
+    "condition": "health>=60"
+  },
+  {
+    "id": "achv_start_lowrisk",
+    "name": "风险警觉",
+    "description": "开局风险意识较低。",
+    "grade": 1,
+    "hide": false,
+    "opportunity": "START",
+    "condition": "risk<=15"
+  },
+  {
+    "id": "achv_ctf_first",
+    "name": "首次攻防演练",
+    "description": "完成第一次 CTF。",
+    "grade": 1,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_CTF]"
+  },
+  {
+    "id": "achv_community_voice",
+    "name": "社区发声",
+    "description": "在社区留下作品或分享。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_COMMUNITY]"
+  },
+  {
+    "id": "achv_first_cert",
+    "name": "第一张证书",
+    "description": "获得一张安全相关认证。",
+    "grade": 1,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_CERT]"
+  },
+  {
+    "id": "achv_blue_shift",
+    "name": "蓝队值班",
+    "description": "在 SOC 值班形成稳定节奏。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_BLUE_SHIFT]"
+  },
+  {
+    "id": "achv_incident",
+    "name": "首次应急",
+    "description": "处理一次安全事件。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_INCIDENT]"
+  },
+  {
+    "id": "achv_incident_response",
+    "name": "应急核心",
+    "description": "成为应急响应主力。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_INCIDENT_RESPONSE]"
+  },
+  {
+    "id": "achv_red_team",
+    "name": "红队起步",
+    "description": "进入红队执行实战。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_RED_TEAM]"
+  },
+  {
+    "id": "achv_red_success",
+    "name": "攻防突破",
+    "description": "完成关键突破任务。",
+    "grade": 3,
+    "hide": true,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_RED_SUCCESS]"
+  },
+  {
+    "id": "achv_vuln_found",
+    "name": "漏洞发现",
+    "description": "发现并提交一枚漏洞。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_VULN]"
+  },
+  {
+    "id": "achv_vuln_major",
+    "name": "高危漏洞",
+    "description": "发现高危漏洞并造成行业影响。",
+    "grade": 4,
+    "hide": true,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_VULN_MAJOR]"
+  },
+  {
+    "id": "achv_compliance",
+    "name": "合规保障",
+    "description": "主导合规评审并通过。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_COMPLIANCE]"
+  },
+  {
+    "id": "achv_privacy",
+    "name": "隐私守护",
+    "description": "完成隐私治理项目。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_PRIVACY]"
+  },
+  {
+    "id": "achv_disclosure",
+    "name": "规范披露",
+    "description": "遵循披露流程完成协调。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_DISCLOSURE]"
+  },
+  {
+    "id": "achv_leadership",
+    "name": "团队带领",
+    "description": "在关键节点承担领导职责。",
+    "grade": 4,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_LEADERSHIP]"
+  },
+  {
+    "id": "achv_ethics_choice",
+    "name": "伦理抉择",
+    "description": "面对压力仍选择合规。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_ETHICS]"
+  },
+  {
+    "id": "achv_stability",
+    "name": "稳健心态",
+    "description": "保持健康与风险平衡。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "health>=50 & risk<=30"
+  },
+  {
+    "id": "achv_burnout",
+    "name": "燃尽警告",
+    "description": "在职业中出现明显疲惫。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_BURNOUT]"
+  },
+  {
+    "id": "achv_reputation_high",
+    "name": "行业影响力",
+    "description": "积累较高的行业声誉。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "reputation>=60"
+  },
+  {
+    "id": "achv_tech_master",
+    "name": "技术熟练",
+    "description": "技术实力达到较高水平。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "tech>=70"
+  },
+  {
+    "id": "achv_social_connector",
+    "name": "关键连接者",
+    "description": "建立广泛的协作网络。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "social>=60"
+  },
+  {
+    "id": "achv_ethics_guardian",
+    "name": "伦理守护",
+    "description": "长期保持高伦理标准。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "ethics>=60"
+  },
+  {
+    "id": "achv_finance_ok",
+    "name": "财务稳健",
+    "description": "财务状况保持稳定。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "money>=40"
+  },
+  {
+    "id": "achv_risk_taker",
+    "name": "风险玩家",
+    "description": "你一直处在高风险场景。",
+    "grade": 3,
+    "hide": true,
+    "opportunity": "SUMMARY",
+    "condition": "risk>=70"
+  },
+  {
+    "id": "achv_balance",
+    "name": "身心平衡",
+    "description": "在职业节奏中保持平衡。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "health>=60 & ethics>=40"
+  },
+  {
+    "id": "achv_lead_track",
+    "name": "管理轨迹",
+    "description": "解锁管理路线节点。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "TAG?[lead]"
+  },
+  {
+    "id": "achv_ciso",
+    "name": "安全负责人",
+    "description": "达到高声誉的管理结局。",
+    "grade": 5,
+    "hide": true,
+    "opportunity": "END",
+    "condition": "reputation>=75 & social>=60"
+  },
+  {
+    "id": "achv_research_master",
+    "name": "研究大师",
+    "description": "以研究成果在行业立足。",
+    "grade": 4,
+    "hide": true,
+    "opportunity": "END",
+    "condition": "tech>=75 & ethics>=30"
+  },
+  {
+    "id": "achv_red_legend",
+    "name": "红队传奇",
+    "description": "在攻防对抗中建立传奇声望。",
+    "grade": 4,
+    "hide": true,
+    "opportunity": "END",
+    "condition": "tech>=70 & risk>=50 & TAG?[red]"
+  },
+  {
+    "id": "achv_grc_governance",
+    "name": "治理官",
+    "description": "合规治理路径达成顶峰。",
+    "grade": 4,
+    "hide": true,
+    "opportunity": "END",
+    "condition": "ethics>=70 & TAG?[grc]"
+  },
+  {
+    "id": "achv_wellness_ending",
+    "name": "稳健收官",
+    "description": "以良好状态结束职业旅程。",
+    "grade": 4,
+    "hide": false,
+    "opportunity": "END",
+    "condition": "health>=70 & reputation>=40"
+  },
+  {
+    "id": "achv_happy_ending",
+    "name": "乐在其中",
+    "description": "你在安全人生中保持了持续的快乐。",
+    "grade": 4,
+    "hide": false,
+    "opportunity": "END",
+    "condition": "happiness>=80"
+  },
+  {
+    "id": "achv_grit_master",
+    "name": "韧性领跑",
+    "description": "你在压力中展现了坚韧与毅力。",
+    "grade": 4,
+    "hide": false,
+    "opportunity": "END",
+    "condition": "ethics>=80"
+  },
+  {
+    "id": "achv_family_support",
+    "name": "家境稳健",
+    "description": "你在资源支持下保持稳定成长。",
+    "grade": 4,
+    "hide": false,
+    "opportunity": "END",
+    "condition": "money>=70"
+  }
+]
