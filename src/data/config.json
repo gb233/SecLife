@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "ageStart": 0,
+  "ageEnd": 90,
+  "initialPoints": 20,
+  "defaultEndingId": "ending_normal",
+  "stats": [
+    { "id": "tech", "label": "智力", "min": 0, "max": 100, "base": 10, "group": "core" },
+    { "id": "social", "label": "沟通", "min": 0, "max": 100, "base": 10, "group": "core" },
+    { "id": "ethics", "label": "毅力", "min": 0, "max": 100, "base": 10, "group": "core" },
+    { "id": "reputation", "label": "声誉", "min": 0, "max": 100, "base": 5, "group": "core" },
+    { "id": "risk", "label": "风险", "min": 0, "max": 100, "base": 15, "group": "core" },
+    { "id": "health", "label": "体质", "min": 0, "max": 100, "base": 60, "group": "core" },
+    { "id": "money", "label": "家境", "min": 0, "max": 100, "base": 8, "group": "core" },
+    { "id": "happiness", "label": "快乐", "min": 0, "max": 100, "base": 50, "group": "core" }
+  ]
+}

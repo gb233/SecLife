@@ -1,0 +1,928 @@
+[
+  {
+    "id": "evt_child_001",
+    "title": "童年呵护",
+    "text": "家人细心照料，让你从小就充满安全感。",
+    "grade": 1,
+    "effects": { "stats": { "health": 2, "happiness": 2, "money": 1 } },
+    "tags": ["childhood"]
+  },
+  {
+    "id": "evt_child_002",
+    "title": "家境拮据",
+    "text": "家庭经济紧张，你更早学会了节制与担当。",
+    "grade": 2,
+    "effects": { "stats": { "money": -2, "ethics": 1, "happiness": -1 } },
+    "tags": ["childhood"]
+  },
+  {
+    "id": "evt_child_003",
+    "title": "好奇宝宝",
+    "text": "你总爱拆解玩具，想搞清楚里面的秘密。",
+    "grade": 1,
+    "effects": { "stats": { "tech": 1, "happiness": 1 } },
+    "tags": ["childhood"]
+  },
+  {
+    "id": "evt_child_004",
+    "title": "体弱多病",
+    "text": "幼年身体较弱，培养了你顽强的毅力。",
+    "grade": 2,
+    "effects": { "stats": { "health": -3, "ethics": 2, "happiness": -1 } },
+    "tags": ["childhood"]
+  },
+  {
+    "id": "evt_child_005",
+    "title": "快乐童年",
+    "text": "你拥有一个自由快乐的童年，性格更加开朗。",
+    "grade": 1,
+    "effects": { "stats": { "happiness": 3, "social": 1 } },
+    "tags": ["childhood"]
+  },
+  {
+    "id": "evt_child_006",
+    "title": "安静观察",
+    "text": "你更喜欢安静观察周围世界，慢慢建立沟通能力。",
+    "grade": 1,
+    "effects": { "stats": { "social": 1, "ethics": 1 } },
+    "tags": ["childhood"]
+  },
+  {
+    "id": "evt_child_007",
+    "title": "修补旧电脑",
+    "text": "你把邻居家的旧电脑修好，第一次体验到技术的力量。",
+    "grade": 1,
+    "effects": { "stats": { "tech": 2, "happiness": 1, "reputation": 1 } },
+    "tags": ["childhood"]
+  },
+  {
+    "id": "evt_child_008",
+    "title": "第一次网络危机",
+    "text": "家里的账号被盗，你开始意识到网络安全的重要性。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 1, "risk": 1, "ethics": 1 } },
+    "tags": ["childhood"]
+  },
+  {
+    "id": "evt_campus_001",
+    "title": "高中社团竞赛",
+    "text": "你在信息学竞赛中初露锋芒，开始认真考虑安全方向。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 3, "happiness": 1 } },
+    "tags": ["campus"]
+  },
+  {
+    "id": "evt_campus_002",
+    "title": "自学网络攻防",
+    "text": "课余时间自学攻防技术，理解攻防思维模型。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "risk": 1 } },
+    "tags": ["campus", "ctf"]
+  },
+  {
+    "id": "evt_campus_003",
+    "title": "校园安全讲座",
+    "text": "一次安全讲座让你对安全职业有了清晰认识。",
+    "grade": 1,
+    "effects": { "stats": { "tech": 1, "social": 1, "happiness": 1 } },
+    "tags": ["campus"]
+  },
+  {
+    "id": "evt_entry_001",
+    "title": "第一次安全实习",
+    "text": "你进入安全团队实习，开始接触真实生产环境。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "reputation": 1, "money": 1 } },
+    "tags": ["entry", "blue"]
+  },
+  {
+    "id": "evt_entry_002",
+    "title": "被动应急夜班",
+    "text": "深夜的安全告警让你体会到压力，也磨炼毅力。",
+    "grade": 2,
+    "effects": { "stats": { "health": -2, "ethics": 2, "risk": 1 } },
+    "tags": ["entry", "incident"]
+  },
+  {
+    "id": "evt_entry_003",
+    "title": "红队初试",
+    "text": "你第一次参与红队演练，发现自己需要更多积累。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "risk": 2, "happiness": 1 } },
+    "tags": ["entry", "red"]
+  },
+  {
+    "id": "evt_transition_001",
+    "title": "安全负责人",
+    "text": "你被任命为安全负责人，开始统筹团队。",
+    "grade": 3,
+    "effects": { "stats": { "reputation": 3, "social": 2, "ethics": 1 } },
+    "tags": ["transition", "management"]
+  },
+  {
+    "id": "evt_transition_002",
+    "title": "行业转型",
+    "text": "你转向 AI/金融安全领域，打开新的成长曲线。",
+    "grade": 3,
+    "effects": { "stats": { "tech": 2, "money": 2, "happiness": 1 } },
+    "tags": ["transition", "research"]
+  },
+  {
+    "id": "evt_transition_003",
+    "title": "黑灰诱惑",
+    "text": "高额回报的灰产项目向你伸出橄榄枝。",
+    "grade": 4,
+    "effects": { "stats": { "risk": 4, "money": 3, "happiness": -2 } },
+    "tags": ["transition", "red"]
+  },
+  {
+    "id": "evt_edu_001",
+    "title": "信息安全启蒙",
+    "text": "你第一次系统学习安全基础，决定从攻防入门。",
+    "grade": 1,
+    "effects": { "stats": { "tech": 2, "ethics": 1, "happiness": 1 } },
+    "tags": ["education", "early"]
+  },
+  {
+    "id": "evt_edu_002",
+    "title": "密码学入门",
+    "text": "你开始学习密码学原理，理解安全通信的核心。",
+    "grade": 1,
+    "effects": { "stats": { "tech": 2 } },
+    "tags": ["education", "early"]
+  },
+  {
+    "id": "evt_edu_003",
+    "title": "攻防社团招新",
+    "text": "你加入攻防社团，与志同道合的人一起成长。",
+    "grade": 1,
+    "effects": { "stats": { "social": 2, "tech": 1, "happiness": 1 }, "flagsAdd": ["FLAG_COMMUNITY"] },
+    "tags": ["education", "community", "early"]
+  },
+  {
+    "id": "evt_edu_004",
+    "title": "考取入门证书",
+    "text": "你通过入门认证考试，建立初步信誉。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "reputation": 1 }, "flagsAdd": ["FLAG_CERT"] },
+    "tags": ["education", "early"]
+  },
+  {
+    "id": "evt_edu_005",
+    "title": "程序设计竞赛",
+    "text": "高强度训练让你的技术更扎实，但风险意识也被唤起。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "risk": 1, "happiness": -1 } },
+    "tags": ["education", "early"]
+  },
+  {
+    "id": "evt_edu_006",
+    "title": "网络协议实验",
+    "text": "你拆解多种协议，理解安全边界如何建立。",
+    "grade": 1,
+    "effects": { "stats": { "tech": 2 } },
+    "tags": ["education", "early"]
+  },
+  {
+    "id": "evt_edu_007",
+    "title": "伦理讨论课",
+    "text": "你开始思考技术与伦理的边界。",
+    "grade": 1,
+    "effects": { "stats": { "ethics": 2 } },
+    "tags": ["education", "early"]
+  },
+  {
+    "id": "evt_edu_008",
+    "title": "跨专业合作项目",
+    "text": "你在跨专业团队中实践安全需求沟通。",
+    "grade": 2,
+    "effects": { "stats": { "social": 2, "tech": 1 } },
+    "tags": ["education", "early"]
+  },
+  {
+    "id": "evt_edu_009",
+    "title": "导师科研助理",
+    "text": "你进入科研项目，第一次参与安全研究实践。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "reputation": 1 } },
+    "tags": ["education", "research", "early"]
+  },
+  {
+    "id": "evt_edu_010",
+    "title": "安全实训周",
+    "text": "密集实训让你的技能突飞猛进，也感受到真实攻防压力。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 3, "risk": 1 }, "flagsAdd": ["FLAG_PRACTICE"] },
+    "tags": ["education", "early"]
+  },
+  {
+    "id": "evt_edu_011",
+    "title": "压力测试周",
+    "text": "连续作业让你略感疲惫，但伦理底线更清晰。",
+    "grade": 2,
+    "effects": { "stats": { "health": -2, "ethics": 1, "happiness": -1 } },
+    "tags": ["education", "early"]
+  },
+  {
+    "id": "evt_edu_012",
+    "title": "毕业设计答辩",
+    "text": "你的安全项目获得认可，留下良好口碑。",
+    "grade": 2,
+    "effects": { "stats": { "reputation": 2, "tech": 1 } },
+    "tags": ["education", "early"]
+  },
+  {
+    "id": "evt_ctf_001",
+    "title": "第一次 CTF",
+    "text": "你在比赛中完成第一道题，信心大增。",
+    "grade": 1,
+    "effects": { "stats": { "tech": 2, "happiness": 1 }, "flagsAdd": ["FLAG_CTF"] },
+    "tags": ["ctf", "community", "early"]
+  },
+  {
+    "id": "evt_ctf_002",
+    "title": "夺旗失败复盘",
+    "text": "失败让你更清楚自身短板。",
+    "grade": 1,
+    "effects": { "stats": { "tech": 1, "ethics": 1 } },
+    "tags": ["ctf", "early"]
+  },
+  {
+    "id": "evt_ctf_003",
+    "title": "组队作战",
+    "text": "你与队友协作解题，感受到团队力量。",
+    "grade": 1,
+    "effects": { "stats": { "social": 2, "tech": 1 } },
+    "tags": ["ctf", "community", "early"]
+  },
+  {
+    "id": "evt_ctf_004",
+    "title": "漏洞复现",
+    "text": "你成功复现漏洞，技术敏感度提升。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 3, "risk": 1 }, "flagsAdd": ["FLAG_VULN"] },
+    "tags": ["ctf", "early"]
+  },
+  {
+    "id": "evt_ctf_005",
+    "title": "赛题公开分享",
+    "text": "你的复盘被社区转发，认可度提升。",
+    "grade": 2,
+    "effects": { "stats": { "reputation": 2 }, "flagsAdd": ["FLAG_COMMUNITY"] },
+    "tags": ["ctf", "community", "early"]
+  },
+  {
+    "id": "evt_ctf_006",
+    "title": "组织校内赛",
+    "text": "你担任赛事组织者，练习协调与管理。",
+    "grade": 2,
+    "effects": { "stats": { "social": 3, "reputation": 2 }, "flagsAdd": ["FLAG_LEADERSHIP"] },
+    "tags": ["ctf", "community", "early"]
+  },
+  {
+    "id": "evt_ctf_007",
+    "title": "红蓝混合赛",
+    "text": "你体验红蓝对抗，开始理解真实攻防节奏。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "risk": 2 }, "flagsAdd": ["FLAG_RED_TEAM"] },
+    "tags": ["ctf", "early"]
+  },
+  {
+    "id": "evt_ctf_008",
+    "title": "安全博客",
+    "text": "你坚持输出安全内容，逐步建立个人品牌。",
+    "grade": 2,
+    "effects": { "stats": { "reputation": 2, "ethics": 1 } },
+    "tags": ["ctf", "community", "early"]
+  },
+  {
+    "id": "evt_ctf_009",
+    "title": "脚本自动化",
+    "text": "你写下自动化脚本，大幅提升解题效率。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "risk": -1 } },
+    "tags": ["ctf", "automation", "early"]
+  },
+  {
+    "id": "evt_ctf_010",
+    "title": "攻防交流会",
+    "text": "你在交流会上获得新的思路与朋友。",
+    "grade": 1,
+    "effects": { "stats": { "social": 2, "tech": 1 } },
+    "tags": ["ctf", "community", "early"]
+  },
+  {
+    "id": "evt_blue_001",
+    "title": "SOC 值班",
+    "text": "你开始轮班监测，日常告警处理成为日常。",
+    "grade": 2,
+    "effects": { "stats": { "reputation": 2, "risk": -1 }, "flagsAdd": ["FLAG_BLUE_SHIFT"] },
+    "tags": ["blue", "mid"]
+  },
+  {
+    "id": "evt_blue_002",
+    "title": "告警降噪",
+    "text": "你优化规则，减少无效告警。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2 } },
+    "tags": ["blue", "mid"]
+  },
+  {
+    "id": "evt_blue_003",
+    "title": "钓鱼邮件处置",
+    "text": "你快速识别钓鱼邮件并完成处置。",
+    "grade": 2,
+    "effects": { "stats": { "social": 1, "ethics": 1, "risk": -1 }, "flagsAdd": ["FLAG_INCIDENT"] },
+    "tags": ["blue", "incident", "mid"]
+  },
+  {
+    "id": "evt_blue_004",
+    "title": "日志平台优化",
+    "text": "你整理日志结构，提升查询效率。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2 } },
+    "tags": ["blue", "mid"]
+  },
+  {
+    "id": "evt_blue_005",
+    "title": "勒索预警",
+    "text": "你提前发现勒索行为苗头并上报。",
+    "grade": 3,
+    "effects": { "stats": { "tech": 2, "risk": 2 }, "flagsAdd": ["FLAG_RANSOM"] },
+    "tags": ["blue", "incident", "mid"]
+  },
+  {
+    "id": "evt_blue_006",
+    "title": "威胁狩猎",
+    "text": "你组织一次威胁狩猎，成功发现隐藏风险。",
+    "grade": 3,
+    "effects": { "stats": { "tech": 3, "reputation": 1 } },
+    "tags": ["blue", "mid"]
+  },
+  {
+    "id": "evt_blue_007",
+    "title": "跨部门演练",
+    "text": "你与业务团队共创演练脚本。",
+    "grade": 2,
+    "effects": { "stats": { "social": 2, "reputation": 2 } },
+    "tags": ["blue", "mid"]
+  },
+  {
+    "id": "evt_blue_008",
+    "title": "值班过劳",
+    "text": "连轴转的值班让你身体透支。",
+    "grade": 3,
+    "effects": { "stats": { "health": -3, "risk": 1 } },
+    "tags": ["blue", "health", "mid"]
+  },
+  {
+    "id": "evt_blue_009",
+    "title": "重大应急",
+    "text": "一次重大事件爆发，你需要做出关键决策。",
+    "grade": 4,
+    "effects": { "stats": { "tech": 2, "risk": 3, "reputation": 2 }, "flagsAdd": ["FLAG_INCIDENT_RESPONSE"] },
+    "branch": [
+      { "condition": "tech>=50", "next": "evt_blue_010" },
+      { "condition": "tech<50", "next": "evt_blue_011" }
+    ],
+    "tags": ["blue", "incident", "mid"]
+  },
+  {
+    "id": "evt_blue_010",
+    "title": "应急成功复盘",
+    "text": "你带领团队成功恢复，复盘经验被高层采纳。",
+    "grade": 4,
+    "effects": { "stats": { "reputation": 3, "risk": -2 } },
+    "tags": ["blue", "incident", "mid"]
+  },
+  {
+    "id": "evt_blue_011",
+    "title": "应急升级失控",
+    "text": "应急未能及时收敛，团队承受巨大压力。",
+    "grade": 4,
+    "effects": { "stats": { "health": -2, "reputation": -3, "risk": 4 } },
+    "tags": ["blue", "incident", "mid"]
+  },
+  {
+    "id": "evt_blue_012",
+    "title": "安全运营汇报",
+    "text": "你向管理层汇报安全运营成果，争取更多资源。",
+    "grade": 3,
+    "effects": { "stats": { "social": 2, "reputation": 2 } },
+    "tags": ["blue", "senior"]
+  },
+  {
+    "id": "evt_red_001",
+    "title": "渗透入门",
+    "text": "你开始参与渗透测试项目，熟悉攻防流程。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "risk": 2 }, "flagsAdd": ["FLAG_RED_TEAM"] },
+    "tags": ["red", "offense", "mid"]
+  },
+  {
+    "id": "evt_red_002",
+    "title": "内网横向",
+    "text": "你设计横向移动路径，理解真实对抗场景。",
+    "grade": 3,
+    "effects": { "stats": { "tech": 3, "risk": 2 } },
+    "tags": ["red", "offense", "mid"]
+  },
+  {
+    "id": "evt_red_003",
+    "title": "社工演练",
+    "text": "你主导社工演练，挑战伦理边界。",
+    "grade": 3,
+    "effects": { "stats": { "social": 2, "ethics": -1, "risk": 1 }, "flagsAdd": ["FLAG_SOCIAL_ENGINEERING"] },
+    "tags": ["red", "offense", "mid"]
+  },
+  {
+    "id": "evt_red_004",
+    "title": "红队工具链",
+    "text": "你迭代红队工具链，提高效率。",
+    "grade": 3,
+    "effects": { "stats": { "tech": 3 } },
+    "tags": ["red", "offense", "mid"]
+  },
+  {
+    "id": "evt_red_005",
+    "title": "对抗演练复盘",
+    "text": "演练复盘帮助你建立更强的战术视角。",
+    "grade": 2,
+    "effects": { "stats": { "reputation": 2 } },
+    "tags": ["red", "mid"]
+  },
+  {
+    "id": "evt_red_006",
+    "title": "规则边界争议",
+    "text": "一次演练引发边界争议，你需要权衡。",
+    "grade": 4,
+    "effects": { "stats": { "ethics": -2, "reputation": -1 }, "flagsAdd": ["FLAG_ETHICS_DILEMMA"] },
+    "tags": ["red", "mid"]
+  },
+  {
+    "id": "evt_red_007",
+    "title": "演练失误",
+    "text": "演练中出现失误，压力加剧。",
+    "grade": 4,
+    "effects": { "stats": { "risk": 3, "reputation": -2, "health": -1 } },
+    "tags": ["red", "mid"]
+  },
+  {
+    "id": "evt_red_008",
+    "title": "成功突破",
+    "text": "你完成关键突破，团队对你刮目相看。",
+    "grade": 4,
+    "effects": { "stats": { "tech": 4, "reputation": 2 }, "flagsAdd": ["FLAG_RED_SUCCESS"] },
+    "tags": ["red", "offense", "mid"]
+  },
+  {
+    "id": "evt_red_009",
+    "title": "联合蓝队演练",
+    "text": "你与蓝队共同演练，建立对抗理解。",
+    "grade": 3,
+    "effects": { "stats": { "social": 2, "risk": 1 } },
+    "tags": ["red", "mid"]
+  },
+  {
+    "id": "evt_red_010",
+    "title": "云上渗透",
+    "text": "你深入云平台攻防，掌握新的路径。",
+    "grade": 3,
+    "effects": { "stats": { "tech": 2, "risk": 1 } },
+    "tags": ["red", "cloud", "mid"]
+  },
+  {
+    "id": "evt_red_011",
+    "title": "供应链渗透研究",
+    "text": "你参与供应链渗透研究，场景复杂度提升。",
+    "grade": 4,
+    "effects": { "stats": { "tech": 3 }, "flagsAdd": ["FLAG_SUPPLYCHAIN"] },
+    "tags": ["red", "offense", "mid"]
+  },
+  {
+    "id": "evt_red_012",
+    "title": "红队带队",
+    "text": "你开始带队执行任务，承担更大责任。",
+    "grade": 4,
+    "effects": { "stats": { "social": 2, "reputation": 2 }, "flagsAdd": ["FLAG_LEADERSHIP"] },
+    "tags": ["red", "senior"]
+  },
+  {
+    "id": "evt_grc_001",
+    "title": "合规入门",
+    "text": "你开始学习合规框架与法规。",
+    "grade": 2,
+    "effects": { "stats": { "ethics": 2, "social": 1 } },
+    "tags": ["grc", "compliance", "mid"]
+  },
+  {
+    "id": "evt_grc_002",
+    "title": "风险评估",
+    "text": "你完成一次风险评估，减少潜在损失。",
+    "grade": 2,
+    "effects": { "stats": { "social": 2, "risk": -1 } },
+    "tags": ["grc", "mid"]
+  },
+  {
+    "id": "evt_grc_003",
+    "title": "内部审计",
+    "text": "你参与内部审计，推动安全流程落地。",
+    "grade": 2,
+    "effects": { "stats": { "ethics": 2, "reputation": 1 } },
+    "tags": ["grc", "compliance", "mid"]
+  },
+  {
+    "id": "evt_grc_004",
+    "title": "等保评审",
+    "text": "你主导等保评审，建立合规信誉。",
+    "grade": 3,
+    "effects": { "stats": { "reputation": 2 }, "flagsAdd": ["FLAG_COMPLIANCE"] },
+    "tags": ["grc", "compliance", "mid"]
+  },
+  {
+    "id": "evt_grc_005",
+    "title": "安全政策制定",
+    "text": "你制定安全政策，推动组织执行。",
+    "grade": 3,
+    "effects": { "stats": { "social": 2, "ethics": 1 } },
+    "tags": ["grc", "mid"]
+  },
+  {
+    "id": "evt_grc_006",
+    "title": "供应商评估",
+    "text": "你评估供应商风险，降低隐患。",
+    "grade": 3,
+    "effects": { "stats": { "risk": -2, "social": 1 } },
+    "tags": ["grc", "mid"]
+  },
+  {
+    "id": "evt_grc_007",
+    "title": "整改压力",
+    "text": "整改进度紧张，你承受来自多方压力。",
+    "grade": 3,
+    "effects": { "stats": { "health": -1, "risk": 1 } },
+    "tags": ["grc", "mid"]
+  },
+  {
+    "id": "evt_grc_008",
+    "title": "业务沟通",
+    "text": "你与业务沟通风险，达成共识。",
+    "grade": 2,
+    "effects": { "stats": { "social": 2, "reputation": 1 } },
+    "tags": ["grc", "mid"]
+  },
+  {
+    "id": "evt_grc_009",
+    "title": "数据隐私项目",
+    "text": "你参与数据隐私项目，提升组织合规度。",
+    "grade": 3,
+    "effects": { "stats": { "ethics": 3 }, "flagsAdd": ["FLAG_PRIVACY"] },
+    "tags": ["grc", "compliance", "mid"]
+  },
+  {
+    "id": "evt_grc_010",
+    "title": "安全度量体系",
+    "text": "你搭建安全度量体系，用数据驱动决策。",
+    "grade": 3,
+    "effects": { "stats": { "tech": 1, "social": 1 } },
+    "tags": ["grc", "mid"]
+  },
+  {
+    "id": "evt_res_001",
+    "title": "漏洞挖掘",
+    "text": "你投入漏洞挖掘，找到第一条线索。",
+    "grade": 3,
+    "effects": { "stats": { "tech": 3 }, "flagsAdd": ["FLAG_VULN"] },
+    "tags": ["research", "vuln", "mid"]
+  },
+  {
+    "id": "evt_res_002",
+    "title": "PoC 复现",
+    "text": "你完成 PoC 复现，提升实战能力。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "risk": 1 } },
+    "tags": ["research", "mid"]
+  },
+  {
+    "id": "evt_res_003",
+    "title": "漏洞披露",
+    "text": "你遵循披露流程，获得行业认可。",
+    "grade": 3,
+    "effects": { "stats": { "ethics": 2, "reputation": 2 }, "flagsAdd": ["FLAG_DISCLOSURE"] },
+    "tags": ["research", "vuln", "mid"]
+  },
+  {
+    "id": "evt_res_004",
+    "title": "工具发布",
+    "text": "你发布安全工具，获得社区关注。",
+    "grade": 3,
+    "effects": { "stats": { "reputation": 2, "tech": 2 } },
+    "tags": ["research", "community", "mid"]
+  },
+  {
+    "id": "evt_res_005",
+    "title": "论文发表",
+    "text": "你发表研究成果，声誉提升。",
+    "grade": 4,
+    "effects": { "stats": { "reputation": 3 } },
+    "tags": ["research", "mid"]
+  },
+  {
+    "id": "evt_res_006",
+    "title": "低质量漏洞争议",
+    "text": "你因漏洞争议遭受质疑。",
+    "grade": 3,
+    "effects": { "stats": { "ethics": -1, "reputation": -1 } },
+    "tags": ["research", "mid"]
+  },
+  {
+    "id": "evt_res_007",
+    "title": "自动化挖掘",
+    "text": "你搭建自动化挖掘流程，效率提升。",
+    "grade": 3,
+    "effects": { "stats": { "tech": 3 } },
+    "tags": ["research", "automation", "mid"]
+  },
+  {
+    "id": "evt_res_008",
+    "title": "高危漏洞发现",
+    "text": "你发现高危漏洞，影响力大增。",
+    "grade": 5,
+    "effects": { "stats": { "tech": 4, "risk": 1 }, "flagsAdd": ["FLAG_VULN_MAJOR"] },
+    "tags": ["research", "vuln", "mid"]
+  },
+  {
+    "id": "evt_res_009",
+    "title": "攻防研究交流",
+    "text": "你与同行交流研究成果，拓展人脉。",
+    "grade": 2,
+    "effects": { "stats": { "social": 2 } },
+    "tags": ["research", "community", "mid"]
+  },
+  {
+    "id": "evt_res_010",
+    "title": "修复协作",
+    "text": "你与厂商协作修复漏洞，流程顺畅。",
+    "grade": 2,
+    "effects": { "stats": { "social": 1, "ethics": 1 } },
+    "tags": ["research", "mid"]
+  },
+  {
+    "id": "evt_mgt_001",
+    "title": "组建小团队",
+    "text": "你开始带领小团队，承担管理职责。",
+    "grade": 3,
+    "effects": { "stats": { "social": 2, "reputation": 1 }, "flagsAdd": ["FLAG_MANAGER"] },
+    "tags": ["management", "senior"]
+  },
+  {
+    "id": "evt_mgt_002",
+    "title": "安全预算争取",
+    "text": "你为安全项目争取预算，沟通能力提升。",
+    "grade": 4,
+    "effects": { "stats": { "social": 3, "reputation": 2 } },
+    "tags": ["management", "senior"]
+  },
+  {
+    "id": "evt_mgt_003",
+    "title": "KPI 压力",
+    "text": "管理层 KPI 压力让你倍感压力。",
+    "grade": 4,
+    "effects": { "stats": { "risk": 2, "health": -2 } },
+    "tags": ["management", "senior"]
+  },
+  {
+    "id": "evt_mgt_004",
+    "title": "跨部门协调",
+    "text": "你主导跨部门协调，推动安全与业务协同。",
+    "grade": 4,
+    "effects": { "stats": { "social": 2, "reputation": 1 }, "flagsAdd": ["FLAG_LEADERSHIP"] },
+    "tags": ["management", "senior"]
+  },
+  {
+    "id": "evt_mgt_005",
+    "title": "人才招聘",
+    "text": "你参与招聘，搭建更完整的团队结构。",
+    "grade": 3,
+    "effects": { "stats": { "social": 2 } },
+    "tags": ["management", "senior"]
+  },
+  {
+    "id": "evt_mgt_006",
+    "title": "流程建设",
+    "text": "你完善安全流程，让团队更稳定。",
+    "grade": 3,
+    "effects": { "stats": { "tech": 1, "ethics": 1 } },
+    "tags": ["management", "senior"]
+  },
+  {
+    "id": "evt_mgt_007",
+    "title": "战略发布",
+    "text": "你发布安全战略，推动长期建设。",
+    "grade": 4,
+    "effects": { "stats": { "reputation": 3 } },
+    "tags": ["management", "senior"]
+  },
+  {
+    "id": "evt_mgt_008",
+    "title": "外部合作",
+    "text": "你与外部合作伙伴建立长期关系。",
+    "grade": 3,
+    "effects": { "stats": { "social": 2, "reputation": 1 } },
+    "tags": ["management", "senior"]
+  },
+  {
+    "id": "evt_mgt_009",
+    "title": "事故问责",
+    "text": "一次事故让你需要承担管理责任。",
+    "grade": 4,
+    "effects": { "stats": { "ethics": 1, "reputation": -2 } },
+    "tags": ["management", "senior"]
+  },
+  {
+    "id": "evt_mgt_010",
+    "title": "安全文化建设",
+    "text": "你推动安全文化深入人心。",
+    "grade": 3,
+    "effects": { "stats": { "social": 2, "ethics": 1 } },
+    "tags": ["management", "senior"]
+  },
+  {
+    "id": "evt_life_001",
+    "title": "失眠加剧",
+    "text": "连续的压力让你的睡眠质量下降。",
+    "grade": 3,
+    "effects": { "stats": { "health": -3 } },
+    "tags": ["general", "life"]
+  },
+  {
+    "id": "evt_life_002",
+    "title": "健身计划",
+    "text": "你坚持健身，状态逐渐恢复。",
+    "grade": 2,
+    "effects": { "stats": { "health": 3 } },
+    "tags": ["general", "life"]
+  },
+  {
+    "id": "evt_life_003",
+    "title": "经济压力",
+    "text": "生活成本上升，你的财务压力增加。",
+    "grade": 3,
+    "effects": { "stats": { "money": -3, "health": -1 } },
+    "tags": ["general", "life", "finance"]
+  },
+  {
+    "id": "evt_life_004",
+    "title": "兼职讲师",
+    "text": "你分享经验获取额外收入。",
+    "grade": 2,
+    "effects": { "stats": { "money": 2, "reputation": 1 } },
+    "tags": ["general", "life", "finance"]
+  },
+  {
+    "id": "evt_life_005",
+    "title": "开源贡献",
+    "text": "你参与开源项目，影响力提升。",
+    "grade": 2,
+    "effects": { "stats": { "reputation": 2 }, "flagsAdd": ["FLAG_COMMUNITY"] },
+    "tags": ["general", "life", "community"]
+  },
+  {
+    "id": "evt_life_006",
+    "title": "家庭支持",
+    "text": "家庭理解你的工作压力，给予支持。",
+    "grade": 2,
+    "effects": { "stats": { "social": 2, "health": 1 } },
+    "tags": ["general", "life"]
+  },
+  {
+    "id": "evt_life_007",
+    "title": "伦理抉择",
+    "text": "你坚持道德底线，选择合规处理。",
+    "grade": 3,
+    "effects": { "stats": { "ethics": 2 }, "flagsAdd": ["FLAG_ETHICS"] },
+    "tags": ["general", "life", "ethics"]
+  },
+  {
+    "id": "evt_life_008",
+    "title": "过度加班",
+    "text": "你长时间加班，身心都受到影响。",
+    "grade": 4,
+    "effects": { "stats": { "health": -4, "risk": 1 }, "flagsAdd": ["FLAG_BURNOUT"] },
+    "tags": ["general", "life", "health"]
+  },
+  {
+    "id": "evt_life_009",
+    "title": "心理疏导",
+    "text": "你开始主动疏导情绪，状态改善。",
+    "grade": 2,
+    "effects": { "stats": { "health": 2, "risk": -1 } },
+    "tags": ["general", "life"]
+  },
+  {
+    "id": "evt_life_010",
+    "title": "职业转型犹豫",
+    "text": "你开始思考转型，内心摇摆。",
+    "grade": 3,
+    "effects": { "stats": { "social": -1, "risk": 2 } },
+    "tags": ["general", "life"]
+  },
+  {
+    "id": "evt_life_011",
+    "title": "自我学习奖励",
+    "text": "你坚持自学，技术持续提升。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2 } },
+    "tags": ["general", "life"]
+  },
+  {
+    "id": "evt_life_012",
+    "title": "行业大会分享",
+    "text": "你在行业大会分享经验，收获认可。",
+    "grade": 3,
+    "effects": { "stats": { "reputation": 3, "social": 2 }, "flagsAdd": ["FLAG_COMMUNITY"] },
+    "tags": ["general", "life", "community"]
+  },
+  {
+    "id": "evt_life_013",
+    "title": "事故波及",
+    "text": "一次安全事故波及你的项目，压力剧增。",
+    "grade": 4,
+    "effects": { "stats": { "reputation": -3, "risk": 3 }, "flagsAdd": ["FLAG_INCIDENT"] },
+    "tags": ["general", "life", "incident"]
+  },
+  {
+    "id": "evt_life_014",
+    "title": "退休规划",
+    "text": "你开始规划人生下半程，保持稳定节奏。",
+    "grade": 2,
+    "effects": { "stats": { "ethics": 1, "social": 1 } },
+    "tags": ["general", "life", "legacy"]
+  },
+  {
+    "id": "evt_cross_product_001",
+    "title": "产品安全共创",
+    "text": "你与产品经理共创安全体验，推动安全融入流程。",
+    "grade": 2,
+    "effects": { "stats": { "social": 2, "tech": 1, "reputation": 1 } },
+    "tags": ["cross", "product", "blue"]
+  },
+  {
+    "id": "evt_cross_legal_001",
+    "title": "法务合规评审",
+    "text": "你与法务联合评审关键项目，明确合规边界。",
+    "grade": 2,
+    "effects": { "stats": { "ethics": 2, "reputation": 1, "happiness": -1 } },
+    "tags": ["cross", "legal", "grc"]
+  },
+  {
+    "id": "evt_cross_finance_001",
+    "title": "财务审计沟通",
+    "text": "财务审计到来，你需要用数据讲清安全价值。",
+    "grade": 3,
+    "effects": { "stats": { "money": 1, "ethics": 1, "risk": 1 } },
+    "tags": ["cross", "finance", "grc"]
+  },
+  {
+    "id": "evt_cross_ops_001",
+    "title": "运维窗口协同",
+    "text": "你与运维团队排期修复窗口，降低事故概率。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 1, "health": -1, "risk": -1 } },
+    "tags": ["cross", "ops", "incident"]
+  },
+  {
+    "id": "evt_cross_hr_001",
+    "title": "内部威胁排查",
+    "text": "你协助 HR 完成内部威胁排查，强化制度约束。",
+    "grade": 3,
+    "exclude": "TAG?[red]",
+    "effects": { "stats": { "ethics": 1, "social": 1, "risk": -1 } },
+    "tags": ["cross", "hr", "privacy"]
+  },
+  {
+    "id": "evt_cross_dev_001",
+    "title": "开发安全改造",
+    "text": "你与研发一起改造关键服务，降低攻击面。",
+    "grade": 2,
+    "effects": { "stats": { "tech": 2, "risk": -1 } },
+    "tags": ["cross", "dev", "blue"]
+  },
+  {
+    "id": "evt_cross_marketing_001",
+    "title": "营销数据合规",
+    "text": "市场活动触及隐私问题，你需要平衡增长与合规。",
+    "grade": 3,
+    "effects": { "stats": { "social": 1, "ethics": 1, "risk": 1 } },
+    "tags": ["cross", "marketing", "privacy"]
+  },
+  {
+    "id": "evt_cross_board_001",
+    "title": "董事会风险简报",
+    "text": "你在董事会上汇报风险趋势，争取长期投入。",
+    "grade": 4,
+    "include": "reputation>=30",
+    "effects": { "stats": { "reputation": 3, "social": 2, "ethics": 1 } },
+    "tags": ["cross", "executive", "lead"]
+  }
+]

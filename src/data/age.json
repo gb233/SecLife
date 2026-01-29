@@ -1,0 +1,1671 @@
+[
+  {
+    "age": 0,
+    "events": [
+      {
+        "id": "evt_child_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_003",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_curiosity"
+    ]
+  },
+  {
+    "age": 1,
+    "events": [
+      {
+        "id": "evt_child_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 2,
+    "events": [
+      {
+        "id": "evt_child_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 3,
+    "events": [
+      {
+        "id": "evt_child_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_003",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_004",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 4,
+    "events": [
+      {
+        "id": "evt_child_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_006",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_007",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 5,
+    "events": [
+      {
+        "id": "evt_child_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_child_002",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 6,
+    "events": [
+      {
+        "id": "evt_edu_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 7,
+    "events": [
+      {
+        "id": "evt_edu_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 8,
+    "events": [
+      {
+        "id": "evt_edu_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 9,
+    "events": [
+      {
+        "id": "evt_edu_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_012",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 10,
+    "events": [
+      {
+        "id": "evt_campus_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_campus_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_campus_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 11,
+    "events": [
+      {
+        "id": "evt_edu_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 12,
+    "events": [
+      {
+        "id": "evt_edu_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_edu_006",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_fast_learner"
+    ]
+  },
+  {
+    "age": 13,
+    "events": [
+      {
+        "id": "evt_ctf_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_ctf_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_ctf_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 14,
+    "events": [
+      {
+        "id": "evt_ctf_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_ctf_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_ctf_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 15,
+    "events": [
+      {
+        "id": "evt_ctf_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_ctf_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_ctf_009",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_focus"
+    ]
+  },
+  {
+    "age": 16,
+    "events": [
+      {
+        "id": "evt_ctf_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_campus_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_campus_002",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 17,
+    "events": [
+      {
+        "id": "evt_campus_003",
+        "weight": 1
+      },
+      {
+        "id": "evt_ctf_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_ctf_002",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 18,
+    "events": [
+      {
+        "id": "evt_ctf_003",
+        "weight": 1
+      },
+      {
+        "id": "evt_ctf_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_ctf_005",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_ctf_instinct"
+    ]
+  },
+  {
+    "age": 19,
+    "events": [
+      {
+        "id": "evt_entry_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_entry_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_entry_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 20,
+    "events": [
+      {
+        "id": "evt_cross_dev_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_product_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_ops_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 21,
+    "events": [
+      {
+        "id": "evt_transition_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_transition_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_transition_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 22,
+    "events": [
+      {
+        "id": "evt_cross_marketing_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_hr_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_entry_001",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_detection",
+      "talent_role_roulette"
+    ]
+  },
+  {
+    "age": 23,
+    "events": [
+      {
+        "id": "evt_entry_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_entry_003",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_dev_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 24,
+    "events": [
+      {
+        "id": "evt_cross_product_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_ops_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_transition_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 25,
+    "events": [
+      {
+        "id": "evt_blue_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_003",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_communication"
+    ]
+  },
+  {
+    "age": 26,
+    "events": [
+      {
+        "id": "evt_blue_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 27,
+    "events": [
+      {
+        "id": "evt_blue_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 28,
+    "events": [
+      {
+        "id": "evt_blue_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_012",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 29,
+    "events": [
+      {
+        "id": "evt_cross_product_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_dev_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_red_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 30,
+    "events": [
+      {
+        "id": "evt_red_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_red_003",
+        "weight": 1
+      },
+      {
+        "id": "evt_red_004",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_risk_awareness",
+      "talent_product_bridge"
+    ]
+  },
+  {
+    "age": 31,
+    "events": [
+      {
+        "id": "evt_red_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_red_006",
+        "weight": 1
+      },
+      {
+        "id": "evt_red_007",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 32,
+    "events": [
+      {
+        "id": "evt_red_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_red_009",
+        "weight": 1
+      },
+      {
+        "id": "evt_red_010",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 33,
+    "events": [
+      {
+        "id": "evt_red_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_red_012",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_001",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_researcher"
+    ]
+  },
+  {
+    "age": 34,
+    "events": [
+      {
+        "id": "evt_blue_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_003",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_004",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 35,
+    "events": [
+      {
+        "id": "evt_blue_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_006",
+        "weight": 1
+      },
+      {
+        "id": "evt_blue_007",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 36,
+    "events": [
+      {
+        "id": "evt_grc_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_grc_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_grc_003",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_leadership",
+      "talent_legal_guard"
+    ]
+  },
+  {
+    "age": 37,
+    "events": [
+      {
+        "id": "evt_grc_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_grc_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_grc_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 38,
+    "events": [
+      {
+        "id": "evt_grc_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_grc_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_grc_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 39,
+    "events": [
+      {
+        "id": "evt_grc_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_legal_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_finance_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 40,
+    "events": [
+      {
+        "id": "evt_cross_hr_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_res_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_res_002",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_strategy",
+      "talent_finance_focus"
+    ]
+  },
+  {
+    "age": 41,
+    "events": [
+      {
+        "id": "evt_res_003",
+        "weight": 1
+      },
+      {
+        "id": "evt_res_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_res_005",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 42,
+    "events": [
+      {
+        "id": "evt_res_006",
+        "weight": 1
+      },
+      {
+        "id": "evt_res_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_res_008",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 43,
+    "events": [
+      {
+        "id": "evt_res_009",
+        "weight": 1
+      },
+      {
+        "id": "evt_res_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_legal_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 44,
+    "events": [
+      {
+        "id": "evt_grc_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_grc_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_grc_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 45,
+    "events": [
+      {
+        "id": "evt_mgt_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_mgt_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_mgt_003",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_crisis_handling",
+      "talent_ops_rigor"
+    ]
+  },
+  {
+    "age": 46,
+    "events": [
+      {
+        "id": "evt_mgt_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_mgt_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_mgt_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 47,
+    "events": [
+      {
+        "id": "evt_mgt_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_mgt_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_mgt_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 48,
+    "events": [
+      {
+        "id": "evt_mgt_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_board_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 49,
+    "events": [
+      {
+        "id": "evt_life_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_003",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_004",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 50,
+    "events": [
+      {
+        "id": "evt_life_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_006",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_007",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_health_discipline"
+    ]
+  },
+  {
+    "age": 51,
+    "events": [
+      {
+        "id": "evt_life_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_009",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_010",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 52,
+    "events": [
+      {
+        "id": "evt_life_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_012",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_013",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 53,
+    "events": [
+      {
+        "id": "evt_life_014",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_board_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_mgt_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 54,
+    "events": [
+      {
+        "id": "evt_mgt_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_mgt_003",
+        "weight": 1
+      },
+      {
+        "id": "evt_mgt_004",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 55,
+    "events": [
+      {
+        "id": "evt_life_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 56,
+    "events": [
+      {
+        "id": "evt_life_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 57,
+    "events": [
+      {
+        "id": "evt_life_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 58,
+    "events": [
+      {
+        "id": "evt_life_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_012",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 59,
+    "events": [
+      {
+        "id": "evt_life_013",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_014",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_board_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 60,
+    "events": [
+      {
+        "id": "evt_life_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_003",
+        "weight": 1
+      }
+    ],
+    "talents": [
+      "talent_grit_guard"
+    ]
+  },
+  {
+    "age": 61,
+    "events": [
+      {
+        "id": "evt_life_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 62,
+    "events": [
+      {
+        "id": "evt_life_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 63,
+    "events": [
+      {
+        "id": "evt_life_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_012",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 64,
+    "events": [
+      {
+        "id": "evt_life_013",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_014",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_board_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 65,
+    "events": [
+      {
+        "id": "evt_life_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 66,
+    "events": [
+      {
+        "id": "evt_life_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 67,
+    "events": [
+      {
+        "id": "evt_life_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 68,
+    "events": [
+      {
+        "id": "evt_life_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_012",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 69,
+    "events": [
+      {
+        "id": "evt_life_013",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_014",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_board_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 70,
+    "events": [
+      {
+        "id": "evt_life_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 71,
+    "events": [
+      {
+        "id": "evt_life_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 72,
+    "events": [
+      {
+        "id": "evt_life_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 73,
+    "events": [
+      {
+        "id": "evt_life_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_012",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 74,
+    "events": [
+      {
+        "id": "evt_life_013",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_014",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_board_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 75,
+    "events": [
+      {
+        "id": "evt_life_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 76,
+    "events": [
+      {
+        "id": "evt_life_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 77,
+    "events": [
+      {
+        "id": "evt_life_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 78,
+    "events": [
+      {
+        "id": "evt_life_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_012",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 79,
+    "events": [
+      {
+        "id": "evt_life_013",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_014",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_board_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 80,
+    "events": [
+      {
+        "id": "evt_life_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 81,
+    "events": [
+      {
+        "id": "evt_life_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 82,
+    "events": [
+      {
+        "id": "evt_life_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 83,
+    "events": [
+      {
+        "id": "evt_life_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_012",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 84,
+    "events": [
+      {
+        "id": "evt_life_013",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_014",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_board_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 85,
+    "events": [
+      {
+        "id": "evt_life_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 86,
+    "events": [
+      {
+        "id": "evt_life_004",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_005",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_006",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 87,
+    "events": [
+      {
+        "id": "evt_life_007",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_008",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_009",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 88,
+    "events": [
+      {
+        "id": "evt_life_010",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_011",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_012",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 89,
+    "events": [
+      {
+        "id": "evt_life_013",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_014",
+        "weight": 1
+      },
+      {
+        "id": "evt_cross_board_001",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  },
+  {
+    "age": 90,
+    "events": [
+      {
+        "id": "evt_life_001",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_002",
+        "weight": 1
+      },
+      {
+        "id": "evt_life_003",
+        "weight": 1
+      }
+    ],
+    "talents": []
+  }
+]
