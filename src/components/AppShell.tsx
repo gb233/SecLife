@@ -20,12 +20,12 @@ function AppShell({ children }: AppShellProps) {
         <div className="panel px-5 py-4 md:px-6">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="chip">安全人生重开计划</p>
+              <p className="chip">安全人的一生</p>
               <h1 className="mt-2 text-xl font-semibold text-slate md:text-2xl">
-                安全人的一生 · 复盘实验室
+                安全人的一生
               </h1>
               <p className="mt-2 max-w-2xl text-xs text-slate/70">
-                以事件、天赋与职业路线驱动的安全职业模拟，从校园到红蓝对抗、治理合规与管理路径。
+                一生很长，安全只是其中一种选择。你能控制方向与节奏，无法控制时代与事件。
               </p>
             </div>
             <div className="flex flex-wrap gap-1.5">
@@ -53,7 +53,7 @@ function AppShell({ children }: AppShellProps) {
 
       <footer className="page-shell py-3 shrink-0">
         <div className="rounded-xl border border-slate/20 bg-ink/40 px-5 py-3 text-[11px] text-slate/60">
-          数据均为模拟，强调安全职业路径的策略与抉择，不用于现实风险评估。
+          每次开始都会生成不同的人生轨迹。
         </div>
       </footer>
     </div>
