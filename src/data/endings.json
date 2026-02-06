@@ -2,12 +2,40 @@
   "defaultEndingId": "ending_normal",
   "list": [
     {
+      "id": "ending_fatal_accident",
+      "title": "意外离世",
+      "summary": "世事无常，你在意外中离开。",
+      "grade": 1,
+      "priority": 1000,
+      "condition": "FLAG?[FLAG_FATAL_ACCIDENT]",
+      "category": "fate"
+    },
+    {
+      "id": "ending_fatal_disease",
+      "title": "病逝",
+      "summary": "病痛终究带走了你，人生在宁静中谢幕。",
+      "grade": 2,
+      "priority": 950,
+      "condition": "FLAG?[FLAG_FATAL_DISEASE]",
+      "category": "fate"
+    },
+    {
+      "id": "ending_death",
+      "title": "寿终正寝",
+      "summary": "生命走到尽头，你在岁月中谢幕。",
+      "grade": 2,
+      "priority": 900,
+      "condition": "health<=0 & FLAG![FLAG_FATAL_ACCIDENT] & FLAG![FLAG_FATAL_DISEASE]",
+      "category": "fate"
+    },
+    {
       "id": "ending_normal",
       "title": "稳健安全人",
       "summary": "你以稳健姿态完成职业旅程，留下可复用的安全经验。",
       "grade": 3,
       "priority": 10,
-      "condition": "health>0"
+      "condition": "health>0",
+      "category": "career"
     },
     {
       "id": "ending_blue_ops",
@@ -15,7 +43,8 @@
       "summary": "你在安全运营体系中建立了稳固的节奏与流程。",
       "grade": 4,
       "priority": 60,
-      "condition": "TAG?[blue] & reputation>=55"
+      "condition": "TAG?[blue] & reputation>=55",
+      "category": "career"
     },
     {
       "id": "ending_red_ace",
@@ -23,7 +52,8 @@
       "summary": "你在高对抗任务中建立起传奇战绩。",
       "grade": 4,
       "priority": 60,
-      "condition": "TAG?[red] & tech>=65 & risk>=40"
+      "condition": "TAG?[red] & tech>=65 & risk>=40",
+      "category": "career"
     },
     {
       "id": "ending_grc_guardian",
@@ -31,7 +61,197 @@
       "summary": "你构建了稳定的治理体系，保障业务合规。",
       "grade": 4,
       "priority": 60,
-      "condition": "TAG?[grc] & ethics>=60"
+      "condition": "TAG?[grc] & ethics>=60",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_governor",
+      "title": "ISO治理官",
+      "summary": "你以ISO27001为主轴构建治理体系，成为合规锚点。",
+      "grade": 4,
+      "priority": 61,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[grc] & ethics>=60",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_consult",
+      "title": "ISO咨询专家",
+      "summary": "你在ISO27001认证与落地中赢得客户信任，成为行业标杆。",
+      "grade": 4,
+      "priority": 58,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[consult] & social>=55 & reputation>=45",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_policy",
+      "title": "政策治理官",
+      "summary": "你以政策体系稳住合规节奏，成为组织治理核心。",
+      "grade": 4,
+      "priority": 57,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[grc] & ethics>=65",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_org",
+      "title": "组织治理委员",
+      "summary": "你统筹跨部门协作，建立稳定的治理机制。",
+      "grade": 4,
+      "priority": 57,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[lead] & social>=60 & reputation>=50",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_hr",
+      "title": "人力安全负责人",
+      "summary": "你把人力安全流程变成组织常态，风险显著下降。",
+      "grade": 4,
+      "priority": 56,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[lead] & ethics>=60 & reputation>=45",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_bcp",
+      "title": "连续性守护者",
+      "summary": "你让灾备与演练成为常态，组织在冲击中依旧稳定。",
+      "grade": 4,
+      "priority": 56,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & (TAG?[ir] | TAG?[ops]) & reputation>=45",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_physical",
+      "title": "物理安全守护者",
+      "summary": "你把物理安全流程落地到细节，守住关键边界。",
+      "grade": 4,
+      "priority": 55,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[ops] & ethics>=55",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_appsec",
+      "title": "ISO应用安全守护者",
+      "summary": "你以ISO27001应用安全体系守住研发防线，实践扎实稳定。",
+      "grade": 4,
+      "priority": 57,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[appsec] & tech>=55 & ethics>=55",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_data",
+      "title": "ISO数据安全守护者",
+      "summary": "你以ISO27001数据安全体系稳住合规与风险边界。",
+      "grade": 4,
+      "priority": 57,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[data] & tech>=50 & ethics>=55",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_supply",
+      "title": "ISO供应链治理者",
+      "summary": "你在供应链安全与治理中形成闭环，成为组织的合规支柱。",
+      "grade": 4,
+      "priority": 56,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[grc] & reputation>=50 & social>=40",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_cloud",
+      "title": "ISO云安全护盾",
+      "summary": "你以ISO27001云安全实践稳住云上风险，形成可靠护盾。",
+      "grade": 4,
+      "priority": 57,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[cloud] & tech>=55 & risk<=40",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_ot",
+      "title": "ISO工控守护者",
+      "summary": "你在工控现场推进ISO27001落地，执行力与安全性显著提升。",
+      "grade": 4,
+      "priority": 56,
+      "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[ops] & tech>=50 & ethics>=55",
+      "category": "career"
+    },
+    {
+      "id": "ending_iso_policy_slip",
+      "title": "政策失守",
+      "summary": "ISO政策执行走样，审计与整改压力接踵而至。",
+      "grade": 2,
+      "priority": 54,
+      "condition": "FLAG?[FLAG_ISO_POLICY_SLIP]",
+      "category": "risk"
+    },
+    {
+      "id": "ending_iso_org_fragment",
+      "title": "协同失衡",
+      "summary": "跨部门协同失效，治理机制难以推进。",
+      "grade": 2,
+      "priority": 54,
+      "condition": "FLAG?[FLAG_ISO_ORG_FRAGMENT]",
+      "category": "risk"
+    },
+    {
+      "id": "ending_iso_hr_gap",
+      "title": "人力失控",
+      "summary": "人力流程漏洞引发权限失控，组织安全被动。",
+      "grade": 2,
+      "priority": 53,
+      "condition": "FLAG?[FLAG_ISO_HR_GAP]",
+      "category": "risk"
+    },
+    {
+      "id": "ending_iso_bcp_break",
+      "title": "灾备失灵",
+      "summary": "关键时刻灾备失效，连续性建设暴露短板。",
+      "grade": 2,
+      "priority": 53,
+      "condition": "FLAG?[FLAG_ISO_BCP_BREAK]",
+      "category": "risk"
+    },
+    {
+      "id": "ending_iso_physical_breach",
+      "title": "物理防线失守",
+      "summary": "物理安全漏洞被放大，关键边界出现失控。",
+      "grade": 2,
+      "priority": 52,
+      "condition": "FLAG?[FLAG_ISO_PHYSICAL_BREACH]",
+      "category": "risk"
+    },
+    {
+      "id": "ending_outsource_failure",
+      "title": "交付翻车",
+      "summary": "外包交付事故让客户信任流失，你被迫调整方向。",
+      "grade": 2,
+      "priority": 52,
+      "condition": "FLAG?[FLAG_OUTSOURCE_INCIDENT]",
+      "category": "risk"
+    },
+    {
+      "id": "ending_outsource_layoff",
+      "title": "外包被优化",
+      "summary": "项目收缩带来岗位优化，你不得不重新规划路径。",
+      "grade": 2,
+      "priority": 52,
+      "condition": "FLAG?[FLAG_OUTSOURCE_LAYOFF]",
+      "category": "risk"
+    },
+    {
+      "id": "ending_ops_outage",
+      "title": "运维事故",
+      "summary": "重大宕机让你背负压力，体系需要重建。",
+      "grade": 2,
+      "priority": 52,
+      "condition": "FLAG?[FLAG_OPS_OUTAGE]",
+      "category": "risk"
+    },
+    {
+      "id": "ending_media_backlash",
+      "title": "舆情反噬",
+      "summary": "内容争议引发舆情反噬，你的声誉遭到冲击。",
+      "grade": 2,
+      "priority": 52,
+      "condition": "FLAG?[FLAG_MEDIA_BACKLASH]",
+      "category": "risk"
     },
     {
       "id": "ending_research_master",
@@ -39,7 +259,8 @@
       "summary": "你以研究成果塑造行业方向。",
       "grade": 4,
       "priority": 70,
-      "condition": "TAG?[research] & tech>=70"
+      "condition": "TAG?[research] & tech>=70",
+      "category": "career"
     },
     {
       "id": "ending_ciso",
@@ -47,7 +268,8 @@
       "summary": "你建立起全面的安全体系，成为组织核心。",
       "grade": 5,
       "priority": 90,
-      "condition": "TAG?[lead] & reputation>=75 & social>=60"
+      "condition": "TAG?[lead] & reputation>=75 & social>=60",
+      "category": "career"
     },
     {
       "id": "ending_strategy",
@@ -55,7 +277,8 @@
       "summary": "你以战略视角引领安全方向。",
       "grade": 5,
       "priority": 80,
-      "condition": "social>=70 & reputation>=60"
+      "condition": "(social>=70 & reputation>=60) | (FLAG?[FLAG_STRATEGY_PATH] & social>=60 & reputation>=50)",
+      "category": "career"
     },
     {
       "id": "ending_burnout",
@@ -63,7 +286,8 @@
       "summary": "高压让你身心透支，必须暂停脚步。",
       "grade": 2,
       "priority": 80,
-      "condition": "health<=10"
+      "condition": "health<=10 & health>0",
+      "category": "risk"
     },
     {
       "id": "ending_risk_overload",
@@ -71,7 +295,8 @@
       "summary": "长期高风险决策让你付出代价。",
       "grade": 2,
       "priority": 70,
-      "condition": "risk>=85"
+      "condition": "risk>=85",
+      "category": "risk"
     },
     {
       "id": "ending_community_mentor",
@@ -79,7 +304,17 @@
       "summary": "你在社区沉淀了丰富经验，成为后辈导师。",
       "grade": 3,
       "priority": 50,
-      "condition": "FLAG?[FLAG_COMMUNITY] & reputation>=50"
+      "condition": "FLAG?[FLAG_COMMUNITY] & reputation>=50",
+      "category": "honor"
+    },
+    {
+      "id": "ending_industry_mentor",
+      "title": "行业导师",
+      "summary": "你把咨询经验沉淀为行业方法论，成为可信的导师。",
+      "grade": 4,
+      "priority": 52,
+      "condition": "FLAG?[FLAG_INDUSTRY_MENTOR]",
+      "category": "honor"
     },
     {
       "id": "ending_privacy_guard",
@@ -87,7 +322,8 @@
       "summary": "你推动隐私与合规治理，建立信任。",
       "grade": 3,
       "priority": 55,
-      "condition": "FLAG?[FLAG_PRIVACY] & ethics>=55"
+      "condition": "TAG?[privacy] & ethics>=55",
+      "category": "career"
     },
     {
       "id": "ending_research_hero",
@@ -95,7 +331,8 @@
       "summary": "你的发现推动了安全行业的进步。",
       "grade": 4,
       "priority": 65,
-      "condition": "FLAG?[FLAG_VULN_MAJOR]"
+      "condition": "FLAG?[FLAG_VULN_MAJOR]",
+      "category": "honor"
     },
     {
       "id": "ending_incident_hero",
@@ -103,7 +340,8 @@
       "summary": "你在关键事件中挽回损失，声誉大涨。",
       "grade": 4,
       "priority": 65,
-      "condition": "FLAG?[FLAG_INCIDENT_RESPONSE] & reputation>=50"
+      "condition": "FLAG?[FLAG_INCIDENT_RESPONSE] & reputation>=50",
+      "category": "honor"
     },
     {
       "id": "ending_happy_life",
@@ -111,7 +349,8 @@
       "summary": "你始终保持热情与快乐，过上自己想要的生活。",
       "grade": 4,
       "priority": 60,
-      "condition": "happiness>=80"
+      "condition": "happiness>=80",
+      "category": "honor"
     },
     {
       "id": "ending_grit_survivor",
@@ -119,7 +358,8 @@
       "summary": "你在无数打击中咬牙坚持，最终稳住了人生。",
       "grade": 4,
       "priority": 58,
-      "condition": "ethics>=80 & health>=35"
+      "condition": "ethics>=80 & health>=35",
+      "category": "honor"
     },
     {
       "id": "ending_family_support",
@@ -127,7 +367,8 @@
       "summary": "家境与资源帮助你实现了更稳定的发展。",
       "grade": 3,
       "priority": 50,
-      "condition": "money>=70"
+      "condition": "money>=70",
+      "category": "family"
     },
     {
       "id": "ending_balance",
@@ -135,7 +376,8 @@
       "summary": "你在职业与健康之间找到了平衡。",
       "grade": 3,
       "priority": 45,
-      "condition": "health>=65 & risk<=25"
+      "condition": "health>=65 & risk<=25",
+      "category": "honor"
     },
     {
       "id": "ending_retire",
@@ -143,7 +385,143 @@
       "summary": "你将经验传递给新人，优雅退场。",
       "grade": 3,
       "priority": 40,
-      "condition": "AGE>=60 & reputation>=40"
+      "condition": "AGE>=60 & reputation>=40",
+      "category": "family"
+    },
+    {
+      "id": "ending_appsec_guard",
+      "title": "应用安全守护者",
+      "summary": "你以稳健的应用安全实践守住了核心防线。",
+      "grade": 4,
+      "priority": 62,
+      "condition": "TAG?[appsec] & tech>=55 & reputation>=40",
+      "category": "career"
+    },
+    {
+      "id": "ending_cloud_shield",
+      "title": "云安全护盾",
+      "summary": "你在云环境中搭建起可靠的安全护盾。",
+      "grade": 4,
+      "priority": 60,
+      "condition": "TAG?[cloud] & tech>=55 & risk<=40",
+      "category": "career"
+    },
+    {
+      "id": "ending_ir_commander",
+      "title": "应急指挥官",
+      "summary": "你在危机中保持冷静，成为关键的指挥者。",
+      "grade": 4,
+      "priority": 64,
+      "condition": "TAG?[ir] & reputation>=55",
+      "category": "career"
+    },
+    {
+      "id": "ending_intel_anchor",
+      "title": "情报锚点",
+      "summary": "你通过情报研判为团队提供方向。",
+      "grade": 4,
+      "priority": 58,
+      "condition": "TAG?[intel] & tech>=55 & social>=35",
+      "category": "career"
+    },
+    {
+      "id": "ending_privacy_steward",
+      "title": "隐私治理官",
+      "summary": "你在隐私与合规之间找到可持续的平衡。",
+      "grade": 4,
+      "priority": 56,
+      "condition": "TAG?[privacy] & ethics>=55",
+      "category": "career"
+    },
+    {
+      "id": "ending_product_builder",
+      "title": "安全产品构建者",
+      "summary": "你把安全能力产品化，让团队持续受益。",
+      "grade": 4,
+      "priority": 57,
+      "condition": "TAG?[secprod] & social>=50 & reputation>=40",
+      "category": "career"
+    },
+    {
+      "id": "ending_consult_partner",
+      "title": "咨询合伙人",
+      "summary": "你以专业判断赢得客户信任，成为关键合伙人。",
+      "grade": 4,
+      "priority": 59,
+      "condition": "TAG?[consult] & social>=55 & reputation>=45",
+      "category": "career"
+    },
+    {
+      "id": "ending_data_sentinel",
+      "title": "安全数据中枢",
+      "summary": "你通过数据洞察掌控安全节奏。",
+      "grade": 4,
+      "priority": 55,
+      "condition": "TAG?[data] & tech>=50",
+      "category": "career"
+    },
+    {
+      "id": "ending_outsource_lead",
+      "title": "外包交付负责人",
+      "summary": "你在外包交付体系中建立稳定节奏，客户信任持续增强。",
+      "grade": 4,
+      "priority": 56,
+      "condition": "TAG?[outsource] & social>=50 & reputation>=40",
+      "category": "career"
+    },
+    {
+      "id": "ending_ops_anchor",
+      "title": "运维掌舵人",
+      "summary": "你在运维体系中稳住全局，保障组织安全节奏。",
+      "grade": 4,
+      "priority": 56,
+      "condition": "TAG?[ops] & tech>=55 & reputation>=40",
+      "category": "career"
+    },
+    {
+      "id": "ending_media_mentor",
+      "title": "安全教育讲师",
+      "summary": "你用内容与课程影响行业，成为可信的安全讲师。",
+      "grade": 4,
+      "priority": 56,
+      "condition": "TAG?[media] & social>=55 & reputation>=45",
+      "category": "career"
+    },
+    {
+      "id": "ending_family_anchor",
+      "title": "家庭支柱",
+      "summary": "你在家庭责任中保持韧性，稳住了人生主线。",
+      "grade": 3,
+      "priority": 52,
+      "condition": "FLAG?[FLAG_PARENT] & ethics>=55 & happiness>=55",
+      "category": "family"
+    },
+    {
+      "id": "ending_marriage_harmony",
+      "title": "婚姻同盟",
+      "summary": "你在关系中找到长期稳定的节奏。",
+      "grade": 3,
+      "priority": 51,
+      "condition": "FLAG?[FLAG_MARRIED] & happiness>=60",
+      "category": "family"
+    },
+    {
+      "id": "ending_eldercare_guard",
+      "title": "照护坚守者",
+      "summary": "你承担照护责任，仍然稳住人生秩序。",
+      "grade": 3,
+      "priority": 50,
+      "condition": "FLAG?[FLAG_ELDERCARE] & ethics>=60",
+      "category": "family"
+    },
+    {
+      "id": "ending_resilient_aftershock",
+      "title": "逆风幸存者",
+      "summary": "你在巨大冲击后保持了韧性与节奏。",
+      "grade": 3,
+      "priority": 53,
+      "condition": "FLAG?[FLAG_SOCIAL_SHOCK] & ethics>=55 & health>=30",
+      "category": "honor"
     }
   ]
 }

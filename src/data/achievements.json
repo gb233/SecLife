@@ -180,6 +180,177 @@
     "condition": "FLAG?[FLAG_ETHICS]"
   },
   {
+    "id": "achv_iso_practice",
+    "name": "ISO27001推进者",
+    "description": "参与并推动ISO27001体系落地。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_ISO_PRACTICE]"
+  },
+  {
+    "id": "achv_iso_governance",
+    "name": "ISO27001治理",
+    "description": "你以ISO27001为主轴稳定合规节奏。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_ISO_PRACTICE] & ethics>=55 & reputation>=40"
+  },
+  {
+    "id": "achv_iso_policy",
+    "name": "政策体系",
+    "description": "你推动安全政策落地并持续优化。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_ISO_PRACTICE] & ethics>=50"
+  },
+  {
+    "id": "achv_iso_org",
+    "name": "协同治理",
+    "description": "你推动跨部门协同形成治理机制。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_ISO_PRACTICE] & (TAG?[lead] | social>=55)"
+  },
+  {
+    "id": "achv_iso_hr",
+    "name": "人力安全",
+    "description": "你完善人力安全流程与培训机制。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_ISO_PRACTICE] & (TAG?[grc] | TAG?[lead])"
+  },
+  {
+    "id": "achv_iso_bcp",
+    "name": "连续性演练",
+    "description": "你推动业务连续性与灾备演练常态化。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_ISO_PRACTICE] & (TAG?[ir] | TAG?[ops])"
+  },
+  {
+    "id": "achv_iso_physical",
+    "name": "物理安全守护",
+    "description": "你让物理安全流程更可控。",
+    "grade": 3,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "FLAG?[FLAG_ISO_PRACTICE] & TAG?[ops]"
+  },
+  {
+    "id": "achv_iso_policy_slip",
+    "name": "政策失守",
+    "description": "ISO政策执行出现明显偏差。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_ISO_POLICY_SLIP]"
+  },
+  {
+    "id": "achv_iso_org_fragment",
+    "name": "协同失衡",
+    "description": "跨部门协同失效，治理难以推进。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_ISO_ORG_FRAGMENT]"
+  },
+  {
+    "id": "achv_iso_hr_gap",
+    "name": "人力失控",
+    "description": "人力安全流程出现漏洞。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_ISO_HR_GAP]"
+  },
+  {
+    "id": "achv_iso_bcp_break",
+    "name": "灾备失灵",
+    "description": "连续性与灾备演练暴露短板。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_ISO_BCP_BREAK]"
+  },
+  {
+    "id": "achv_iso_physical_breach",
+    "name": "物理防线失守",
+    "description": "物理安全漏洞被放大。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_ISO_PHYSICAL_BREACH]"
+  },
+  {
+    "id": "achv_outsource_incident",
+    "name": "交付事故",
+    "description": "外包交付出现严重事故。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_OUTSOURCE_INCIDENT]"
+  },
+  {
+    "id": "achv_outsource_layoff",
+    "name": "外包被优化",
+    "description": "外包岗位被优化，你不得不重新选择方向。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_OUTSOURCE_LAYOFF]"
+  },
+  {
+    "id": "achv_ops_outage",
+    "name": "运维事故",
+    "description": "运维事故让你被迫重整体系。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_OPS_OUTAGE]"
+  },
+  {
+    "id": "achv_media_backlash",
+    "name": "舆情反噬",
+    "description": "内容争议引发舆情反噬。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_MEDIA_BACKLASH]"
+  },
+  {
+    "id": "achv_outsource_delivery",
+    "name": "交付节奏",
+    "description": "你进入安全外包交付节奏。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "TAG?[outsource]"
+  },
+  {
+    "id": "achv_ops_guard",
+    "name": "运维守护",
+    "description": "你在运维体系中形成稳定节奏。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "TAG?[ops]"
+  },
+  {
+    "id": "achv_media_voice",
+    "name": "内容影响力",
+    "description": "你在安全内容领域积累影响力。",
+    "grade": 2,
+    "hide": false,
+    "opportunity": "TRAJECTORY",
+    "condition": "TAG?[media] & reputation>=35"
+  },
+  {
     "id": "achv_stability",
     "name": "稳健心态",
     "description": "保持健康与风险平衡。",
@@ -268,6 +439,15 @@
     "hide": false,
     "opportunity": "SUMMARY",
     "condition": "TAG?[lead]"
+  },
+  {
+    "id": "achv_strategy_board",
+    "name": "董事会战略",
+    "description": "你在董事会层面确立安全战略。",
+    "grade": 4,
+    "hide": false,
+    "opportunity": "SUMMARY",
+    "condition": "FLAG?[FLAG_BOARD_BRIEF] & FLAG?[FLAG_STRATEGY_PATH]"
   },
   {
     "id": "achv_ciso",

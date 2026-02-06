@@ -5,6 +5,7 @@ import { weightedRandom } from "../engine/random";
 import { useSimulation } from "../state/SimulationContext";
 
 const allocationKeys = ["tech", "social", "ethics", "health", "money", "happiness"] as const;
+type AllocationKey = (typeof allocationKeys)[number];
 const TALENT_DRAW_COUNT = 10;
 const TALENT_SELECT_LIMIT = 3;
 const TALENT_GRADE_RATE: Record<number, number> = {
@@ -18,9 +19,13 @@ const TALENT_GRADE_RATE: Record<number, number> = {
 function RunPage() {
   const { start, reset } = useSimulation();
   const navigate = useNavigate();
-  const [allocations, setAllocations] = useState<Record<string, number>>(() =>
-    allocationKeys.reduce((acc, key) => ({ ...acc, [key]: 0 }), {})
-  );
+  const createAllocations = () =>
+    allocationKeys.reduce<Record<AllocationKey, number>>((acc, key) => {
+      acc[key] = 0;
+      return acc;
+    }, {} as Record<AllocationKey, number>);
+
+  const [allocations, setAllocations] = useState<Record<AllocationKey, number>>(createAllocations);
   const [selectedTalents, setSelectedTalents] = useState<string[]>([]);
 
   const statsById = useMemo(() => {
@@ -70,6 +75,13 @@ function RunPage() {
     return selectedTalents.reduce((sum, id) => sum + (talentById.get(id)?.status ?? 0), 0);
   }, [selectedTalents, talentById]);
 
+  const gradeColorByValue: Record<number, string> = {
+    1: "bg-slate-400",
+    2: "bg-sky-400",
+    3: "bg-violet-400",
+    4: "bg-amber-400",
+  };
+
   const remainingPoints = useMemo(() => {
     const spent = Object.values(allocations).reduce((sum, value) => sum + value, 0);
     return dataBundle.config.initialPoints + pointBonus - spent;
@@ -89,14 +101,14 @@ function RunPage() {
 
   const handleReset = () => {
     reset();
-    setAllocations(allocationKeys.reduce((acc, key) => ({ ...acc, [key]: 0 }), {}));
+    setAllocations(createAllocations());
     setSelectedTalents([]);
     setDrawnTalents(drawTalents(talentPool));
   };
 
   const handleRandomAllocate = () => {
     const maxPoints = dataBundle.config.initialPoints + pointBonus;
-    const nextAllocations = allocationKeys.reduce((acc, key) => ({ ...acc, [key]: 0 }), {});
+    const nextAllocations = createAllocations();
     let remaining = maxPoints;
     const maxByKey = allocationKeys.map((key) => ({
       key,
@@ -192,16 +204,17 @@ function RunPage() {
               talent.exclusive &&
               selectedTalents.some((id) => talentById.get(id)?.exclusive);
             const blocked = conflict || exclusiveBlocked || (!active && selectedTalents.length >= TALENT_SELECT_LIMIT);
+            const gradeColor = gradeColorByValue[talent.grade] ?? "bg-slate-400";
             return (
               <button
                 key={talent.id}
                 type="button"
                 className={
                   active
-                    ? "btn-primary"
+                    ? "btn-primary gap-2"
                     : blocked
-                      ? "btn-ghost opacity-50 cursor-not-allowed"
-                      : "btn-ghost"
+                      ? "btn-ghost gap-2 opacity-50 cursor-not-allowed"
+                      : "btn-ghost gap-2"
                 }
                 onClick={() => {
                   setSelectedTalents((prev) =>
@@ -214,7 +227,8 @@ function RunPage() {
                 }}
                 disabled={blocked}
               >
-                {talent.name}
+                <span className={`h-2 w-2 rounded-full ${gradeColor}`} aria-hidden="true" />
+                <span>{talent.name}</span>
               </button>
             );
           })}

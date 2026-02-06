@@ -64,6 +64,6 @@ function snapshotState(state: EngineState): EngineState {
     achievements: new Set(state.achievements),
     careerNodes: new Set(state.careerNodes),
     seenEvents: new Set(state.seenEvents),
-    log: state.log,
+    log: [...state.log],
   };
 }

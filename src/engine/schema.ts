@@ -6,6 +6,7 @@ export const StatSchema = z.object({
   min: z.number(),
   max: z.number(),
   base: z.number(),
+  baseRange: z.tuple([z.number(), z.number()]).optional(),
   group: z.string(),
 });
 
@@ -135,6 +136,7 @@ export const EndingSchema = z.object({
   grade: z.number(),
   priority: z.number(),
   condition: z.string(),
+  category: z.enum(["career", "family", "risk", "honor", "fate"]).optional(),
   tags: z.array(z.string()).optional(),
 });
 

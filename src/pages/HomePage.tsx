@@ -5,26 +5,26 @@ function HomePage() {
     <section className="panel h-full overflow-y-auto px-5 py-5 md:px-7">
       <div className="grid h-full gap-6 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <p className="chip">完整体验版</p>
+          <p className="chip">安全人的一生</p>
           <h2 className="mt-3 text-2xl font-semibold text-slate md:text-3xl">
-            用一生的选择，推演你的安全职业图谱
+            一生很长，安全只是其中一个方向
           </h2>
           <p className="mt-3 text-sm text-slate/70">
-            在不同阶段选择天赋、接受挑战、积累信誉与技能。职业树将根据你的决定自动展开，成就系统记录每一次关键节点。
+            你能控制的是选择与节奏，不能控制的是时代与事件。用一个短周期看到一个可能的人生样本。
           </p>
           <div className="mt-5 flex flex-wrap gap-2">
             <Link to="/run" className="btn-primary">
-              开始重开
+              开始人生
             </Link>
             <Link to="/careers" className="btn-ghost">
-              查看职业路线
+              看人生路线
             </Link>
           </div>
           <div className="mt-5 grid gap-3 md:grid-cols-3">
             {[
-              { title: "事件驱动", desc: "每年基于状态抽取安全场景与任务。" },
-              { title: "职业树", desc: "蓝队、红队、GRC、研究、管理五条主线。" },
-              { title: "成就系统", desc: "记录关键转折与高光时刻。" },
+              { title: "可控", desc: "选择方向、技能投入、关系处理与节奏安排。" },
+              { title: "不可控", desc: "行业波动、突发事件、组织变化与健康起伏。" },
+              { title: "短周期", desc: "几分钟看到一个可能的人生轨迹与结局。" },
             ].map((item) => (
               <div key={item.title} className="rounded-xl border border-slate/20 bg-ink/40 p-3">
                 <p className="text-xs font-semibold text-slate">{item.title}</p>
@@ -35,15 +35,15 @@ function HomePage() {
         </div>
         <div className="flex flex-col justify-between rounded-2xl border border-slate/20 bg-ink/50 p-5">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-slate/40">场景预览</p>
+            <p className="text-xs uppercase tracking-[0.2em] text-slate/40">可能发生的事</p>
             <div className="mt-4 space-y-3 text-xs text-slate/70">
-              <p>· 面对一次供应链攻击，你需要平衡合规、客户压力与修复速度。</p>
-              <p>· 社区贡献被发现漏洞链路，选择披露还是私下修复？</p>
-              <p>· 安全预算被削减，如何说服管理层留下关键岗位？</p>
+              <p>· 项目被事故波及，你需要在压力下做出取舍。</p>
+              <p>· 预算收紧或扩张，职业方向与节奏被迫调整。</p>
+              <p>· 健康与家庭变化，迫使你重新权衡投入与回报。</p>
             </div>
           </div>
           <div className="mt-6 rounded-xl border border-slate/20 bg-ink/30 p-3 text-[11px] text-slate/60">
-            提示：每次重开都会生成不同的人生轨迹，建议多次体验。
+            提示：安全只是人生中的一条支线，你的选择会让轨迹分岔。
           </div>
         </div>
       </div>

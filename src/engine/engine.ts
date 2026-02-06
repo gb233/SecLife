@@ -50,6 +50,7 @@ export class LifeEngine {
     if (options.allocations) {
       this.applyAllocations(options.allocations, options.pointBonus ?? 0);
     }
+    this.applyTalents(this.state.talents);
     this.evaluateAchievements("START");
     return this.state;
   }
@@ -94,16 +95,22 @@ export class LifeEngine {
       entries.push({
         age: targetAge,
         type: "SYSTEM",
-        title: "人生落幕",
-        text: "这一年没有新的故事，你的人生在平静中落幕。",
+        title: "平淡一年",
+        text: "这一年没有新的故事，你的生活继续前行。",
       });
-      this.state.isEnd = true;
-      entries.push(...this.evaluateAchievements("SUMMARY"));
-      entries.push(...this.evaluateAchievements("END"));
+      entries.push(...this.unlockCareers());
+      entries.push(...this.evaluateAchievements("TRAJECTORY"));
+      this.applyAgingDecay(targetAge);
+      this.state.isEnd = this.isEnd();
+      if (this.state.isEnd) {
+        this.appendFatalFallback(entries);
+        entries.push(...this.evaluateAchievements("SUMMARY"));
+        entries.push(...this.evaluateAchievements("END"));
+      }
       if (entries.length > 0) {
         this.state.log.push(...entries);
       }
-      return { age: this.state.age, entries, isEnd: true };
+      return { age: this.state.age, entries, isEnd: this.state.isEnd };
     }
 
     entries.push(...this.unlockCareers());
@@ -113,6 +120,7 @@ export class LifeEngine {
 
     this.state.isEnd = this.isEnd();
     if (this.state.isEnd) {
+      this.appendFatalFallback(entries);
       entries.push(...this.evaluateAchievements("SUMMARY"));
       entries.push(...this.evaluateAchievements("END"));
     }
@@ -124,9 +132,11 @@ export class LifeEngine {
   }
 
   getSummary(): Summary {
-    const ending = this.selectEnding();
+    const endings = this.selectEndings();
+    const ending = endings[0];
     return {
       ending,
+      endings,
       stats: { ...this.state.stats },
       achievements: Array.from(this.state.achievements),
       careerNodes: Array.from(this.state.careerNodes),
@@ -141,6 +151,14 @@ export class LifeEngine {
   private createInitialState(): EngineState {
     const baseStats: Record<string, number> = {};
     this.data.config.stats.forEach((stat) => {
+      if (stat.baseRange) {
+        const [minValue, maxValue] = stat.baseRange;
+        const min = Math.min(minValue, maxValue);
+        const max = Math.max(minValue, maxValue);
+        const value = min + Math.floor(this.rng() * (max - min + 1));
+        baseStats[stat.id] = this.clampStat(stat.id, value);
+        return;
+      }
       baseStats[stat.id] = stat.base;
     });
     return {
@@ -289,18 +307,23 @@ export class LifeEngine {
   }
 
   private pickEvent(ageEvents: { id: string; weight: number }[]): { id: string; weight: number } | null {
-    const candidates = ageEvents.filter(({ id }) => this.eventMap.has(id));
+    const candidates = ageEvents.filter(({ id }) => {
+      const event = this.eventMap.get(id);
+      return !!event && !event.noRandom;
+    });
     const filtered = candidates.filter(({ id }) => {
       const event = this.eventMap.get(id);
       if (!event) return false;
-      if (event.noRandom) return false;
       if (event.include && !checkCondition(this.state, event.include)) return false;
       if (event.exclude && checkCondition(this.state, event.exclude)) return false;
       return true;
     });
     if (filtered.length === 0) return null;
+    const unseen = filtered.filter(({ id }) => !this.state.seenEvents.has(id));
+    if (unseen.length === 0) return null;
+    const pool = unseen;
     const selectedId = weightedRandom(
-      filtered.map((entry) => ({ item: entry, weight: entry.weight })),
+      pool.map((entry) => ({ item: entry, weight: entry.weight })),
       this.rng
     );
     return selectedId;
@@ -427,20 +450,85 @@ export class LifeEngine {
     return false;
   }
 
-  private selectEnding(): { id: string; title: string; summary: string; grade: number; priority: number; condition: string; tags?: string[] } {
-    const matches = this.data.endings.list
-      .filter((ending) => checkCondition(this.state, ending.condition))
-      .sort((a, b) => b.priority - a.priority);
-    if (matches.length > 0) return matches[0];
-    return (
-      this.data.endings.list.find((ending) => ending.id === this.data.endings.defaultEndingId) ??
-      this.data.endings.list[0]
+  private selectEndings(): {
+    id: string;
+    title: string;
+    summary: string;
+    grade: number;
+    priority: number;
+    condition: string;
+    category?: "career" | "family" | "risk" | "honor" | "fate";
+    tags?: string[];
+  }[] {
+    const matches = this.data.endings.list.filter((ending) =>
+      checkCondition(this.state, ending.condition)
     );
+    if (matches.length === 0) {
+      const fallback =
+        this.data.endings.list.find((ending) => ending.id === this.data.endings.defaultEndingId) ??
+        this.data.endings.list[0];
+      return fallback ? [fallback] : [];
+    }
+
+    const byCategory = new Map<string, typeof matches>();
+    matches.forEach((ending) => {
+      const category = ending.category ?? "career";
+      const list = byCategory.get(category) ?? [];
+      list.push(ending);
+      byCategory.set(category, list);
+    });
+
+    const selections = Array.from(byCategory.values()).map((list) =>
+      [...list].sort((a, b) => b.priority - a.priority)[0]
+    );
+
+    return selections.sort((a, b) => b.priority - a.priority);
   }
 
   private clampStat(key: string, value: number): number {
     const statDef = this.data.config.stats.find((stat) => stat.id === key);
     if (!statDef) return value;
     return Math.min(statDef.max, Math.max(statDef.min, value));
+  }
+
+  private appendFatalFallback(entries: LogEntry[]) {
+    if (this.state.stats.health > 0) return;
+    if (
+      this.state.flags.has("FLAG_FATAL_ACCIDENT") ||
+      this.state.flags.has("FLAG_FATAL_DISEASE")
+    ) {
+      return;
+    }
+    const { title, text } = this.getFatalFallbackNarrative(this.state.age);
+    entries.push({
+      age: this.state.age,
+      type: "EVT",
+      title,
+      text,
+      grade: 5,
+    });
+    this.state.flags.add("FLAG_FATAL_DISEASE");
+  }
+
+  private getFatalFallbackNarrative(age: number): { title: string; text: string } {
+    if (age <= 2) {
+      return { title: "病逝", text: "生命在襁褓中戛然而止。" };
+    }
+    if (age <= 12) {
+      return { title: "病逝", text: "一场重病带走了你的童年。" };
+    }
+    if (age <= 18) {
+      return { title: "病逝", text: "身体在压力中崩溃，人生过早结束。" };
+    }
+    if (age <= 35) {
+      return { title: "病逝", text: "过劳与病痛叠加，你最终没能挺过来。" };
+    }
+    if (age <= 50) {
+      return { title: "病逝", text: "多重压力下健康急转直下，你离开了世界。" };
+    }
+    if (age <= 65) {
+      return { title: "病逝", text: "慢性疾病恶化，你在亲友陪伴中告别。" };
+    }
+    return { title: "病逝", text: "年岁已高，生命在平静中落幕。" };
   }
 }

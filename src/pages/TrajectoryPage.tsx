@@ -1,11 +1,19 @@
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { dataBundle } from "../engine/data";
+import type { LogEntry } from "../engine/types";
 import { useSimulation } from "../state/SimulationContext";
 
 function TrajectoryPage() {
   const { state, summary, next, reset } = useSimulation();
   const navigate = useNavigate();
+  const categoryLabel: Record<string, string> = {
+    career: "职业",
+    family: "家庭",
+    risk: "风险",
+    honor: "荣誉",
+    fate: "命运",
+  };
   const [autoMode, setAutoMode] = useState(false);
   const [autoSpeed, setAutoSpeed] = useState(650);
   const [showEndModal, setShowEndModal] = useState(false);
@@ -19,6 +27,39 @@ function TrajectoryPage() {
       value: state.stats[stat.id] ?? 0,
     }));
   }, [state.stats]);
+
+  const achievementDetails = useMemo(() => {
+    if (!summary) {
+      return [];
+    }
+    return summary.achievements
+      .map((id) => dataBundle.achievements.find((achv) => achv.id === id))
+      .filter((item): item is (typeof dataBundle.achievements)[number] => Boolean(item));
+  }, [summary]);
+
+  const highlightAchievements = useMemo(() => {
+    return achievementDetails.filter((achievement) => achievement.grade >= 4);
+  }, [achievementDetails]);
+
+  const groupedLog = useMemo(() => {
+    const map = new Map<number, LogEntry[]>();
+    state.log.forEach((entry) => {
+      const list = map.get(entry.age) ?? [];
+      list.push(entry);
+      map.set(entry.age, list);
+    });
+    return Array.from(map.entries())
+      .sort((a, b) => a[0] - b[0])
+      .map(([age, entries]) => {
+        const main = entries.find((entry) => entry.type === "EVT") ?? entries[0];
+        const extra = entries.filter((entry) => entry !== main);
+        return {
+          age,
+          main,
+          extraCount: extra.length,
+        };
+      });
+  }, [state.log]);
 
   useEffect(() => {
     if (summary && autoMode) {
@@ -49,7 +90,7 @@ function TrajectoryPage() {
     }
     logScrollRef.current.scrollTop = logScrollRef.current.scrollHeight;
     lastEntryRef.current?.scrollIntoView({ block: "end" });
-  }, [state.log.length]);
+  }, [groupedLog.length]);
 
   const handleBack = () => {
     setAutoMode(false);
@@ -79,20 +120,20 @@ function TrajectoryPage() {
           </div>
 
           <div ref={logScrollRef} className="mt-3 min-h-0 flex-1 overflow-y-auto pr-1">
-            {state.log.length === 0 ? (
+            {groupedLog.length === 0 ? (
               <div className="rounded-lg border border-dashed border-slate/30 bg-ink/40 p-3 text-[11px] text-slate/60">
                 还没有轨迹记录，点击“推进一年”开始人生。
               </div>
             ) : (
-              state.log.map((entry, index) => (
+              groupedLog.map((group, index) => (
                 <div
-                  key={`${entry.age}-${entry.title}-${index}`}
-                  ref={index === state.log.length - 1 ? lastEntryRef : null}
+                  key={group.age}
+                  ref={index === groupedLog.length - 1 ? lastEntryRef : null}
                   className="border-b border-slate/20 py-2 text-[11px] text-slate/80"
                 >
-                  <span className="mr-2 text-slate/40">{entry.age}岁：</span>
-                  <span className="font-semibold text-slate">{entry.title}</span>
-                  <span className="ml-2 text-slate/70">{entry.text}</span>
+                  <span className="mr-2 text-slate/40">{group.age}岁：</span>
+                  <span className="font-semibold text-slate">{group.main?.title}</span>
+                  <span className="ml-2 text-slate/70">{group.main?.text}</span>
                 </div>
               ))
             )}
@@ -167,10 +208,30 @@ function TrajectoryPage() {
         {summary ? (
           <div className="panel p-4">
             <h3 className="text-xs font-semibold">结局摘要</h3>
+            {(() => {
+              const endings = summary.endings ?? [summary.ending];
+              const primary = endings[0];
+              const primaryLabel = categoryLabel[primary?.category ?? "career"] ?? "职业";
+              return (
             <div className="mt-2">
-              <p className="text-xs font-semibold text-slate">{summary.ending.title}</p>
-              <p className="mt-2 text-[11px] text-slate/70">{summary.ending.summary}</p>
+              <p className="text-xs font-semibold text-slate">
+                <span className="mr-2 text-[10px] text-slate/50">[{primaryLabel}]</span>
+                {primary?.title}
+              </p>
+              <p className="mt-2 text-[11px] text-slate/70">{primary?.summary}</p>
+              {endings.length > 1 ? (
+                <div className="mt-3 space-y-1 text-[10px] text-slate/60">
+                  <p>其他结局：</p>
+                  {endings.slice(1).map((ending) => (
+                    <p key={ending.id}>
+                      · [{categoryLabel[ending.category ?? "career"] ?? "职业"}] {ending.title}
+                    </p>
+                  ))}
+                </div>
+              ) : null}
             </div>
+              );
+            })()}
           </div>
         ) : null}
       </div>
@@ -178,8 +239,30 @@ function TrajectoryPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 px-4">
           <div className="panel w-full max-w-lg p-5">
             <p className="text-[11px] uppercase tracking-[0.2em] text-slate/40">终局总结</p>
-            <h3 className="mt-3 text-lg font-semibold text-slate">{summary.ending.title}</h3>
-            <p className="mt-2 text-xs text-slate/70">{summary.ending.summary}</p>
+            {(() => {
+              const endings = summary.endings ?? [summary.ending];
+              const primary = endings[0];
+              const primaryLabel = categoryLabel[primary?.category ?? "career"] ?? "职业";
+              return (
+            <>
+              <h3 className="mt-3 text-lg font-semibold text-slate">
+                <span className="mr-2 text-[11px] text-slate/50">[{primaryLabel}]</span>
+                {primary?.title}
+              </h3>
+              <p className="mt-2 text-xs text-slate/70">{primary?.summary}</p>
+              {endings.length > 1 ? (
+                <div className="mt-3 space-y-1 text-[11px] text-slate/60">
+                  <p>其他结局：</p>
+                  {endings.slice(1).map((ending) => (
+                    <p key={ending.id}>
+                      · [{categoryLabel[ending.category ?? "career"] ?? "职业"}] {ending.title}
+                    </p>
+                  ))}
+                </div>
+              ) : null}
+            </>
+              );
+            })()}
             <div className="mt-4 grid gap-2 text-[11px] text-slate/70">
               <div className="flex items-center justify-between">
                 <span>最终年龄</span>
@@ -198,12 +281,49 @@ function TrajectoryPage() {
                 <span>{summary.careerNodes.length}</span>
               </div>
             </div>
+            <div className="mt-4">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-slate/40">属性终点</p>
+              <div className="mt-2 grid gap-2 text-[11px] text-slate/70 sm:grid-cols-2">
+                {dataBundle.config.stats.map((stat) => (
+                  <div key={stat.id} className="flex items-center justify-between">
+                    <span>{stat.label}</span>
+                    <span>{summary.stats[stat.id] ?? 0}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="mt-4">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-slate/40">突出成就</p>
+              {highlightAchievements.length === 0 ? (
+                <p className="mt-2 text-[11px] text-slate/60">暂无突出成就</p>
+              ) : (
+                <div className="mt-2 space-y-1 text-[11px] text-slate/70">
+                  {highlightAchievements.map((achievement) => (
+                    <p key={achievement.id}>· {achievement.name}</p>
+                  ))}
+                </div>
+              )}
+            </div>
             <div className="mt-5 flex flex-wrap gap-2">
-              <button type="button" className="btn-primary" onClick={() => {
-                setShowEndModal(false);
-                navigate("/summary");
-              }}>
-                查看结局详情
+              <button
+                type="button"
+                className="btn-primary"
+                onClick={() => {
+                  setShowEndModal(false);
+                  handleBack();
+                }}
+              >
+                重新开局
+              </button>
+              <button
+                type="button"
+                className="btn-ghost"
+                onClick={() => {
+                  setShowEndModal(false);
+                  navigate("/summary");
+                }}
+              >
+                查看历史结局详情
               </button>
               <button type="button" className="btn-ghost" onClick={() => setShowEndModal(false)}>
                 继续查看轨迹

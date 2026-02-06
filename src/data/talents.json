@@ -6,7 +6,11 @@
     "grade": 1,
     "status": 1,
     "condition": "AGE?[16,17,18]",
-    "effects": { "stats": { "tech": 2 } }
+    "effects": {
+      "stats": {
+        "tech": 1
+      }
+    }
   },
   {
     "id": "talent_fast_learner",
@@ -14,7 +18,11 @@
     "description": "吸收新知识的速度更快。",
     "grade": 1,
     "condition": "tech>=12",
-    "effects": { "stats": { "tech": 2 } }
+    "effects": {
+      "stats": {
+        "tech": 1
+      }
+    }
   },
   {
     "id": "talent_focus",
@@ -23,7 +31,12 @@
     "grade": 1,
     "status": 1,
     "condition": "tech>=15",
-    "effects": { "stats": { "tech": 1, "risk": -1 } }
+    "effects": {
+      "stats": {
+        "tech": 1,
+        "risk": -1
+      }
+    }
   },
   {
     "id": "talent_memory",
@@ -31,7 +44,13 @@
     "description": "形成稳定的知识体系。",
     "grade": 2,
     "condition": "tech>=18",
-    "effects": { "stats": { "tech": 2, "ethics": 1, "happiness": 1 } }
+    "effects": {
+      "stats": {
+        "tech": 1,
+        "ethics": 1,
+        "happiness": 1
+      }
+    }
   },
   {
     "id": "talent_ctf_instinct",
@@ -39,7 +58,12 @@
     "description": "在对抗中更容易找到突破口。",
     "grade": 2,
     "condition": "tech>=20",
-    "effects": { "stats": { "tech": 2, "risk": 1 } }
+    "effects": {
+      "stats": {
+        "tech": 1,
+        "risk": 1
+      }
+    }
   },
   {
     "id": "talent_forensics",
@@ -47,7 +71,13 @@
     "description": "擅长分析日志与证据链。",
     "grade": 2,
     "condition": "tech>=25",
-    "effects": { "stats": { "tech": 2, "ethics": 1, "happiness": 1 } }
+    "effects": {
+      "stats": {
+        "tech": 1,
+        "ethics": 1,
+        "happiness": 1
+      }
+    }
   },
   {
     "id": "talent_detection",
@@ -55,7 +85,12 @@
     "description": "对异常行为更敏感。",
     "grade": 2,
     "condition": "tech>=25",
-    "effects": { "stats": { "tech": 2, "risk": -1 } }
+    "effects": {
+      "stats": {
+        "tech": 1,
+        "risk": -1
+      }
+    }
   },
   {
     "id": "talent_incident_calm",
@@ -63,7 +98,13 @@
     "description": "在紧急事件中保持冷静。",
     "grade": 2,
     "condition": "risk<=40",
-    "effects": { "stats": { "ethics": 1, "reputation": 1, "happiness": 1 } }
+    "effects": {
+      "stats": {
+        "ethics": 1,
+        "reputation": 1,
+        "happiness": 1
+      }
+    }
   },
   {
     "id": "talent_redmind",
@@ -71,8 +112,15 @@
     "description": "更容易理解攻击路径。",
     "grade": 2,
     "condition": "tech>=25 & risk>=25",
-    "effects": { "stats": { "tech": 2, "risk": 1 } },
-    "exclude": ["talent_compliance_sense"]
+    "effects": {
+      "stats": {
+        "tech": 1,
+        "risk": 1
+      }
+    },
+    "exclude": [
+      "talent_compliance_sense"
+    ]
   },
   {
     "id": "talent_social_engineer",
@@ -80,7 +128,12 @@
     "description": "善于模拟攻击者的社交策略。",
     "grade": 2,
     "condition": "social>=20",
-    "effects": { "stats": { "social": 2, "risk": 1 } }
+    "effects": {
+      "stats": {
+        "social": 1,
+        "risk": 1
+      }
+    }
   },
   {
     "id": "talent_compliance_sense",
@@ -88,8 +141,16 @@
     "description": "能快速定位合规差距。",
     "grade": 2,
     "condition": "ethics>=20",
-    "effects": { "stats": { "ethics": 2, "reputation": 1, "happiness": 1 } },
-    "exclude": ["talent_redmind"]
+    "effects": {
+      "stats": {
+        "ethics": 1,
+        "reputation": 1,
+        "happiness": 1
+      }
+    },
+    "exclude": [
+      "talent_redmind"
+    ]
   },
   {
     "id": "talent_policy_writer",
@@ -97,7 +158,13 @@
     "description": "能把安全要求转化为政策。",
     "grade": 3,
     "condition": "ethics>=25 & social>=25",
-    "effects": { "stats": { "social": 2, "ethics": 2, "happiness": 1 } }
+    "effects": {
+      "stats": {
+        "social": 1,
+        "ethics": 1,
+        "happiness": 1
+      }
+    }
   },
   {
     "id": "talent_risk_awareness",
@@ -105,7 +172,12 @@
     "description": "能更早发现潜在风险。",
     "grade": 2,
     "condition": "risk>=20",
-    "effects": { "stats": { "risk": -2, "tech": 1 } }
+    "effects": {
+      "stats": {
+        "risk": -2,
+        "tech": 1
+      }
+    }
   },
   {
     "id": "talent_researcher",
@@ -113,7 +185,11 @@
     "description": "擅长深入研究底层机制。",
     "grade": 3,
     "condition": "tech>=30",
-    "effects": { "stats": { "tech": 3 } }
+    "effects": {
+      "stats": {
+        "tech": 2
+      }
+    }
   },
   {
     "id": "talent_vuln_hunter",
@@ -121,7 +197,12 @@
     "description": "更容易发现高价值漏洞。",
     "grade": 3,
     "condition": "tech>=35",
-    "effects": { "stats": { "tech": 3, "reputation": 1 } }
+    "effects": {
+      "stats": {
+        "tech": 2,
+        "reputation": 1
+      }
+    }
   },
   {
     "id": "talent_toolsmith",
@@ -129,7 +210,12 @@
     "description": "善于打造稳定的安全工具链。",
     "grade": 3,
     "condition": "tech>=30",
-    "effects": { "stats": { "tech": 2, "risk": -1 } }
+    "effects": {
+      "stats": {
+        "tech": 1,
+        "risk": -1
+      }
+    }
   },
   {
     "id": "talent_automation",
@@ -137,7 +223,11 @@
     "description": "能用自动化提升效率。",
     "grade": 2,
     "condition": "tech>=25",
-    "effects": { "stats": { "tech": 2 } }
+    "effects": {
+      "stats": {
+        "tech": 1
+      }
+    }
   },
   {
     "id": "talent_communication",
@@ -145,7 +235,12 @@
     "description": "能把安全语言转化为业务语言。",
     "grade": 2,
     "condition": "social>=20",
-    "effects": { "stats": { "social": 2, "reputation": 1 } }
+    "effects": {
+      "stats": {
+        "social": 1,
+        "reputation": 1
+      }
+    }
   },
   {
     "id": "talent_storytelling",
@@ -153,7 +248,11 @@
     "description": "能更好地讲清安全价值。",
     "grade": 3,
     "condition": "social>=30",
-    "effects": { "stats": { "social": 3 } }
+    "effects": {
+      "stats": {
+        "social": 2
+      }
+    }
   },
   {
     "id": "talent_leadership",
@@ -161,7 +260,12 @@
     "description": "更容易获得团队信任。",
     "grade": 4,
     "condition": "social>=35 & reputation>=20",
-    "effects": { "stats": { "social": 3, "reputation": 3 } }
+    "effects": {
+      "stats": {
+        "social": 2,
+        "reputation": 2
+      }
+    }
   },
   {
     "id": "talent_budgeting",
@@ -169,7 +273,12 @@
     "description": "能更有效地管理安全预算。",
     "grade": 3,
     "condition": "money>=20",
-    "effects": { "stats": { "money": 2, "reputation": 1 } }
+    "effects": {
+      "stats": {
+        "money": 1,
+        "reputation": 1
+      }
+    }
   },
   {
     "id": "talent_negotiation",
@@ -177,7 +286,12 @@
     "description": "在资源争取中更有优势。",
     "grade": 3,
     "condition": "social>=28",
-    "effects": { "stats": { "social": 2, "reputation": 2 } }
+    "effects": {
+      "stats": {
+        "social": 1,
+        "reputation": 1
+      }
+    }
   },
   {
     "id": "talent_resilience",
@@ -185,7 +299,12 @@
     "description": "在压力下仍能保持稳定。",
     "grade": 2,
     "condition": "health>=50",
-    "effects": { "stats": { "health": 2, "risk": -1 } }
+    "effects": {
+      "stats": {
+        "health": 1,
+        "risk": -1
+      }
+    }
   },
   {
     "id": "talent_time_management",
@@ -193,7 +312,12 @@
     "description": "能合理安排学习与工作节奏。",
     "grade": 2,
     "condition": "health>=40",
-    "effects": { "stats": { "health": 1, "tech": 1 } }
+    "effects": {
+      "stats": {
+        "health": 1,
+        "tech": 1
+      }
+    }
   },
   {
     "id": "talent_health_discipline",
@@ -201,7 +325,11 @@
     "description": "保持持续的健康习惯。",
     "grade": 3,
     "condition": "health>=60",
-    "effects": { "stats": { "health": 3 } }
+    "effects": {
+      "stats": {
+        "health": 2
+      }
+    }
   },
   {
     "id": "talent_grit_guard",
@@ -209,7 +337,13 @@
     "description": "在压力下仍能坚持原则。",
     "grade": 3,
     "condition": "ethics>=30",
-    "effects": { "stats": { "ethics": 3, "reputation": 1, "happiness": 1 } }
+    "effects": {
+      "stats": {
+        "ethics": 2,
+        "reputation": 1,
+        "happiness": 1
+      }
+    }
   },
   {
     "id": "talent_community_builder",
@@ -217,7 +351,12 @@
     "description": "擅长与安全社区建立连接。",
     "grade": 2,
     "condition": "reputation>=15",
-    "effects": { "stats": { "reputation": 2, "social": 1 } }
+    "effects": {
+      "stats": {
+        "reputation": 1,
+        "social": 1
+      }
+    }
   },
   {
     "id": "talent_open_source",
@@ -225,7 +364,11 @@
     "description": "开源项目能更快获得关注。",
     "grade": 3,
     "condition": "reputation>=20",
-    "effects": { "stats": { "reputation": 3 } }
+    "effects": {
+      "stats": {
+        "reputation": 2
+      }
+    }
   },
   {
     "id": "talent_cloud_security",
@@ -233,7 +376,12 @@
     "description": "更熟悉云平台安全实践。",
     "grade": 3,
     "condition": "tech>=28",
-    "effects": { "stats": { "tech": 2, "risk": -1 } }
+    "effects": {
+      "stats": {
+        "tech": 1,
+        "risk": -1
+      }
+    }
   },
   {
     "id": "talent_data_privacy",
@@ -241,7 +389,13 @@
     "description": "关注数据隐私与合规。",
     "grade": 3,
     "condition": "ethics>=25",
-    "effects": { "stats": { "ethics": 2, "social": 1, "happiness": 1 } }
+    "effects": {
+      "stats": {
+        "ethics": 1,
+        "social": 1,
+        "happiness": 1
+      }
+    }
   },
   {
     "id": "talent_malware_analysis",
@@ -249,7 +403,12 @@
     "description": "能够快速分析恶意样本。",
     "grade": 3,
     "condition": "tech>=32",
-    "effects": { "stats": { "tech": 3, "risk": 1 } }
+    "effects": {
+      "stats": {
+        "tech": 2,
+        "risk": 1
+      }
+    }
   },
   {
     "id": "talent_osint",
@@ -257,7 +416,12 @@
     "description": "擅长公开情报收集。",
     "grade": 2,
     "condition": "social>=18",
-    "effects": { "stats": { "social": 1, "tech": 1 } }
+    "effects": {
+      "stats": {
+        "social": 1,
+        "tech": 1
+      }
+    }
   },
   {
     "id": "talent_threat_intel",
@@ -265,7 +429,12 @@
     "description": "能把情报转化为行动。",
     "grade": 3,
     "condition": "tech>=30 & social>=20",
-    "effects": { "stats": { "tech": 2, "reputation": 1 } }
+    "effects": {
+      "stats": {
+        "tech": 1,
+        "reputation": 1
+      }
+    }
   },
   {
     "id": "talent_strategy",
@@ -273,7 +442,12 @@
     "description": "能从全局规划安全路线。",
     "grade": 4,
     "condition": "social>=40",
-    "effects": { "stats": { "social": 3, "reputation": 2 } }
+    "effects": {
+      "stats": {
+        "social": 2,
+        "reputation": 1
+      }
+    }
   },
   {
     "id": "talent_crisis_handling",
@@ -281,7 +455,12 @@
     "description": "在高风险事件中保持清晰判断。",
     "grade": 4,
     "condition": "tech>=30 & risk>=30",
-    "effects": { "stats": { "reputation": 2, "risk": -2 } }
+    "effects": {
+      "stats": {
+        "reputation": 1,
+        "risk": -2
+      }
+    }
   },
   {
     "id": "talent_product_bridge",
@@ -289,7 +468,13 @@
     "description": "能把安全需求转化为产品体验。",
     "grade": 2,
     "condition": "social>=18",
-    "effects": { "stats": { "social": 2, "tech": 1, "reputation": 1 } }
+    "effects": {
+      "stats": {
+        "social": 1,
+        "tech": 1,
+        "reputation": 1
+      }
+    }
   },
   {
     "id": "talent_legal_guard",
@@ -297,7 +482,13 @@
     "description": "更擅长把控合规与风险边界。",
     "grade": 2,
     "condition": "ethics>=22",
-    "effects": { "stats": { "ethics": 2, "reputation": 1, "happiness": 1 } }
+    "effects": {
+      "stats": {
+        "ethics": 1,
+        "reputation": 1,
+        "happiness": 1
+      }
+    }
   },
   {
     "id": "talent_finance_focus",
@@ -305,7 +496,12 @@
     "description": "能在安全决策中看清成本与收益。",
     "grade": 2,
     "condition": "money>=18",
-    "effects": { "stats": { "money": 2, "risk": 1 } }
+    "effects": {
+      "stats": {
+        "money": 1,
+        "risk": 1
+      }
+    }
   },
   {
     "id": "talent_ops_rigor",
@@ -313,7 +509,12 @@
     "description": "理解运维节奏，更能压住风险波动。",
     "grade": 2,
     "condition": "health>=45",
-    "effects": { "stats": { "health": 2, "risk": -1 } }
+    "effects": {
+      "stats": {
+        "health": 1,
+        "risk": -1
+      }
+    }
   },
   {
     "id": "talent_role_roulette",
@@ -322,7 +523,11 @@
     "grade": 2,
     "status": 2,
     "condition": "tech>=20 & social>=15",
-    "effects": { "stats": { "social": 1 } },
+    "effects": {
+      "stats": {
+        "social": 1
+      }
+    },
     "replacement": {
       "talent": [
         "talent_product_bridge*1.2",

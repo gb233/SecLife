@@ -55,6 +55,7 @@ export type YearResult = {
 
 export type Summary = {
   ending: Ending;
+  endings: Ending[];
   stats: Record<string, number>;
   achievements: string[];
   careerNodes: string[];

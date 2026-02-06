@@ -19,6 +19,7 @@ const baseState: EngineState = {
   talentTriggers: {},
   achievements: new Set(["achv_start_tech"]),
   careerNodes: new Set(),
+  seenEvents: new Set(),
   log: [],
   isEnd: false,
 };
