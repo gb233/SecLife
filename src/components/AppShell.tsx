@@ -20,13 +20,9 @@ function AppShell({ children }: AppShellProps) {
         <div className="panel px-5 py-4 md:px-6">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div>
-              <p className="chip">安全人的一生</p>
-              <h1 className="mt-2 text-xl font-semibold text-slate md:text-2xl">
-                安全人的一生
+              <h1 className="text-xl font-semibold text-slate md:text-2xl">
+                人生如戏 戏如人生
               </h1>
-              <p className="mt-2 max-w-2xl text-xs text-slate/70">
-                一生很长，安全只是其中一种选择。你能控制方向与节奏，无法控制时代与事件。
-              </p>
             </div>
             <div className="flex flex-wrap gap-1.5">
               {navItems.map((item) => (
