@@ -143,40 +143,85 @@ function RunPage() {
       ) : null}
 
       <div className="mt-4 grid gap-2 md:grid-cols-3">
-        {allocationKeys.map((key) => (
-          <label key={key} className="rounded-lg border border-slate/20 bg-ink/40 p-2.5">
-            <span className="text-[10px] font-semibold text-slate/70">
-              {dataBundle.config.stats.find((stat) => stat.id === key)?.label}
-            </span>
-            <input
-              type="number"
-              min={0}
-              max={dataBundle.config.stats.find((stat) => stat.id === key)?.max ?? 100}
-              value={allocations[key] ?? 0}
-              onChange={(event) =>
-                setAllocations((prev) => {
-                  const rawValue = Number(event.target.value);
-                  const statDef = statsById.get(key);
-                  const min = statDef?.min ?? 0;
-                  const max = statDef?.max ?? 100;
-                  const otherTotal = Object.entries(prev).reduce((sum, [id, value]) =>
-                    id === key ? sum : sum + value,
-                  0);
-                  const maxAllowed = Math.min(
-                    max,
-                    dataBundle.config.initialPoints + pointBonus - otherTotal
-                  );
-                  const nextValue = Math.max(min, Math.min(rawValue, maxAllowed));
-                  return {
-                    ...prev,
-                    [key]: Number.isNaN(nextValue) ? 0 : nextValue,
-                  };
-                })
-              }
-              className="mt-2 w-full rounded-md border border-slate/30 bg-ink/60 px-2 py-1.5 text-[11px] text-slate"
-            />
-          </label>
-        ))}
+        {allocationKeys.map((key) => {
+          const statDef = statsById.get(key);
+          const min = statDef?.min ?? 0;
+          const max = statDef?.max ?? 100;
+          const otherTotal = allocationKeys.reduce(
+            (sum, id) => (id === key ? sum : sum + (allocations[id] ?? 0)),
+            0
+          );
+          const maxAllowed = Math.min(
+            max,
+            dataBundle.config.initialPoints + pointBonus - otherTotal
+          );
+          const canIncrement = (allocations[key] ?? 0) < maxAllowed;
+          const canDecrement = (allocations[key] ?? 0) > min;
+
+          return (
+            <label key={key} className="rounded-lg border border-slate/20 bg-ink/40 p-2.5">
+              <span className="text-[10px] font-semibold text-slate/70">
+                {statDef?.label}
+              </span>
+              <div className="mt-2 flex items-center gap-2">
+                <button
+                  type="button"
+                  className="btn-ghost h-8 w-8 px-0 text-base"
+                  onClick={() =>
+                    setAllocations((prev) => ({
+                      ...prev,
+                      [key]: Math.max(min, (prev[key] ?? 0) - 1),
+                    }))
+                  }
+                  disabled={!canDecrement}
+                  aria-label={`减少${statDef?.label ?? key}`}
+                >
+                  −
+                </button>
+                <input
+                  type="number"
+                  min={min}
+                  max={max}
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  value={allocations[key] ?? 0}
+                  onChange={(event) =>
+                    setAllocations((prev) => {
+                      const rawValue = Number(event.target.value);
+                      const other = allocationKeys.reduce((sum, id) =>
+                        id === key ? sum : sum + (prev[id] ?? 0),
+                      0);
+                      const allowed = Math.min(
+                        max,
+                        dataBundle.config.initialPoints + pointBonus - other
+                      );
+                      const nextValue = Math.max(min, Math.min(rawValue, allowed));
+                      return {
+                        ...prev,
+                        [key]: Number.isNaN(nextValue) ? 0 : nextValue,
+                      };
+                    })
+                  }
+                  className="h-8 w-full flex-1 rounded-md border border-slate/30 bg-ink/60 px-2 text-center text-[11px] text-slate"
+                />
+                <button
+                  type="button"
+                  className="btn-ghost h-8 w-8 px-0 text-base"
+                  onClick={() =>
+                    setAllocations((prev) => ({
+                      ...prev,
+                      [key]: Math.min(maxAllowed, (prev[key] ?? 0) + 1),
+                    }))
+                  }
+                  disabled={!canIncrement}
+                  aria-label={`增加${statDef?.label ?? key}`}
+                >
+                  +
+                </button>
+              </div>
+            </label>
+          );
+        })}
       </div>
 
       <div className="mt-4">
